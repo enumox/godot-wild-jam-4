@@ -34,7 +34,11 @@ func _process(delta : float) -> void:
 func add_weapon(weapon) -> void:
 	var new_weapon = weapon.instance()
 	new_weapon.initialize(aim)
-	weapons[new_weapon.selection_index] = new_weapon
+	if weapons[new_weapon.selection_index] != null:
+		weapons[new_weapon.selection_index].ammo += new_weapon.ammo
+		return
+	else:
+		weapons[new_weapon.selection_index] = new_weapon
 	yield(hand.get_child(0).drop(), 'completed')
 	hand.remove_child(hand.get_child(0))
 	hand.add_child(new_weapon)

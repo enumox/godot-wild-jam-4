@@ -2,6 +2,7 @@ extends KinematicBody
 class_name Player
 
 onready var camera : = $Camera as PlayerCamera
+onready var weapon_manager : = $Camera/WeaponsManager as WeaponsManager
 
 export var move_speed : float
 export var gravity : float

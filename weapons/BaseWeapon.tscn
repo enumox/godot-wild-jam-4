@@ -148,7 +148,7 @@ anims/shoot = SubResource( 5 )
 blend_times = [  ]
 
 [node name="MeshInstance" type="MeshInstance" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.924916, -1.01 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, -1.01 )
 layers = 1
 material_override = null
 cast_shadow = 1
