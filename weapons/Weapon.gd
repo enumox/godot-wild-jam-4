@@ -36,4 +36,6 @@ func shoot() -> void:
 	animation.play('shoot')
 	ammo -= 1
 	if raycast.is_colliding():
-		print('colliding')
+		var enemy = raycast.get_collider() as Enemy
+		if enemy != null:
+			enemy.take_damage(damage)

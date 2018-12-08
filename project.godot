@@ -10,6 +10,11 @@ config_version=4
 
 _global_script_classes=[ {
 "base": "KinematicBody",
+"class": "Enemy",
+"language": "GDScript",
+"path": "res://actors/enemies/Enemy.gd"
+}, {
+"base": "KinematicBody",
 "class": "Player",
 "language": "GDScript",
 "path": "res://player/Player.gd"
@@ -35,6 +40,7 @@ _global_script_classes=[ {
 "path": "res://weapons/WeaponsManager.gd"
 } ]
 _global_script_class_icons={
+"Enemy": "",
 "Player": "",
 "PlayerCamera": "",
 "Weapon": "",
@@ -114,4 +120,5 @@ select_shotgun={
 
 [rendering]
 
+environment/default_clear_color=Color( 0.168627, 0.152941, 0.152941, 1 )
 environment/default_environment="res://default_env.tres"

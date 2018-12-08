@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://weapons/pickups/WeaponPickup.tscn" type="PackedScene" id=1]
-[ext_resource path="res://weapons/BaseWeapon.tscn" type="PackedScene" id=2]
+[ext_resource path="res://weapons/pistol/Pistol.tscn" type="PackedScene" id=2]
 [ext_resource path="res://player/Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://interface/hud/crosshair.png" type="Texture" id=4]
+[ext_resource path="res://actors/enemies/Enemy.tscn" type="PackedScene" id=5]
 
 [sub_resource type="SpatialMaterial" id=1]
 
@@ -692,4 +693,8 @@ size_flags_vertical = 1
 texture = ExtResource( 4 )
 expand = true
 stretch_mode = 0
+
+[node name="Enemy" parent="." instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 4, 0 )
+health = 15
 
