@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://weapons/BaseWeapon.tscn" type="PackedScene" id=1]
+
+[node name="Shotgun" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 0.999968, 0.00798879, 0, -0.00798879, 0.999968, 0, 0, 0 )
+fire_rate = 2
+damage = 15.0
+selection_index = 1
+
