@@ -1,6 +1,8 @@
 extends KinematicBody
 class_name Player
 
+signal damaged()
+
 onready var camera : = $Camera as PlayerCamera
 onready var weapon_manager : = $Camera/WeaponsManager as WeaponsManager
 
@@ -8,6 +10,7 @@ export var move_speed : float
 export var gravity : float
 export var acceleration : float
 export var deceleration : float
+export var health : int
 
 var movement : = Vector3()
 var direction : = Vector3()
@@ -40,3 +43,16 @@ func get_direction(motion : Vector3) -> Vector3:
 	direction += Vector3(1,0,0).rotated(Vector3(0,1,0), rotation.y).normalized() * motion.x
 	direction.y = 0
 	return direction.normalized()
+
+func take_damage(damage : float, knock_back_force : float = 0) -> void:
+	health = max(health - damage, 0)
+	emit_signal('damaged')
+	if health == 0:
+		get_tree().reload_current_scene()
+
+
+
+
+
+
+
