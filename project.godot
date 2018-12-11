@@ -60,8 +60,8 @@ Debugger="*res://utils/Debugger.gd"
 
 [display]
 
-window/size/width=426
-window/size/height=240
+window/size/width=320
+window/size/height=180
 window/stretch/mode="viewport"
 window/stretch/aspect="keep"
 

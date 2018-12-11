@@ -1,0 +1,48 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://weapons/BaseWeapon.tscn" type="PackedScene" id=1]
+[ext_resource path="res://weapons/machine-gun/MachineGun.gd" type="Script" id=2]
+[ext_resource path="res://weapons/machine-gun/MachineGunMesh.tscn" type="PackedScene" id=3]
+
+[sub_resource type="Animation" id=1]
+
+resource_name = "rotate"
+length = 0.3
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("MeshInstance/MachineGunMesh/Torus:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, -180, 90 ), Vector3( 360, -180, 90 ) ]
+}
+
+[node name="MachineGun" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 0.999968, 0.00798879, 0, -0.00798879, 0.999968, 0, 0, 0 )
+script = ExtResource( 2 )
+fire_rate = 10
+ammo = 75
+damage = 2.0
+selection_index = 2
+
+[node name="AnimationPlayer" parent="." index="1"]
+anims/rotate = SubResource( 1 )
+
+[node name="MeshInstance" parent="." index="2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.828591, -1.01 )
+mesh = null
+
+[node name="MachineGunMesh" parent="MeshInstance" index="0" instance=ExtResource( 3 )]
+transform = Transform( -6.55671e-008, 0, 1.5, 0, 1.5, 3.33067e-016, -1.5, 0, -6.55671e-008, 0, 0.00682676, -0.854513 )
+
+[node name="Torus" parent="MeshInstance/MachineGunMesh" index="1"]
+transform = Transform( 6.55671e-008, 1, 2.26494e-007, 1.5, -4.37114e-008, 0, 9.90035e-015, 1.50996e-007, -1.5, -0.0976634, -0.0210417, -2.4831e-009 )
+
+
+[editable path="MeshInstance/MachineGunMesh"]

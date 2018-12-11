@@ -1,10 +1,11 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://weapons/pickups/WeaponPickup.tscn" type="PackedScene" id=1]
 [ext_resource path="res://weapons/pistol/Pistol.tscn" type="PackedScene" id=2]
-[ext_resource path="res://player/Player.tscn" type="PackedScene" id=3]
-[ext_resource path="res://interface/hud/crosshair.png" type="Texture" id=4]
-[ext_resource path="res://actors/enemies/Enemy.tscn" type="PackedScene" id=5]
+[ext_resource path="res://weapons/pickups/shotgun/ShotgunPickup.tscn" type="PackedScene" id=3]
+[ext_resource path="res://player/Player.tscn" type="PackedScene" id=4]
+[ext_resource path="res://interface/hud/crosshair.png" type="Texture" id=5]
+[ext_resource path="res://actors/enemies/Enemy.tscn" type="PackedScene" id=6]
 
 [sub_resource type="SpatialMaterial" id=1]
 
@@ -630,7 +631,31 @@ disabled = false
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 2, 14 )
 weapon = ExtResource( 2 )
 
-[node name="Player" parent="." instance=ExtResource( 3 )]
+[node name="SpotLight2" type="OmniLight" parent="TestMap"]
+transform = Transform( 1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 7.08518, 0 )
+layers = 1
+light_color = Color( 1, 1, 1, 1 )
+light_energy = 1.0
+light_indirect_energy = 1.0
+light_negative = false
+light_specular = 0.5
+light_bake_mode = 1
+light_cull_mask = -1
+shadow_enabled = false
+shadow_color = Color( 0, 0, 0, 1 )
+shadow_bias = 0.15
+shadow_contact = 0.0
+shadow_reverse_cull_face = false
+editor_only = false
+omni_range = 50.0
+omni_attenuation = 3.4822
+omni_shadow_mode = 1
+omni_shadow_detail = 1
+
+[node name="ShotgunPickup" parent="TestMap" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 38, 2, 0 )
+
+[node name="Player" parent="." instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.08518, 0 )
 move_speed = 25.0
 gravity = 5.0
@@ -690,11 +715,11 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
 expand = true
 stretch_mode = 0
 
-[node name="Enemy" parent="." instance=ExtResource( 5 )]
+[node name="Enemy" parent="." instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 4, 0 )
 health = 15
 

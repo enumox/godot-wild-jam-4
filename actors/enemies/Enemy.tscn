@@ -13,7 +13,7 @@ extents = Vector3( 2.5, 2.5, 2.5 )
 
 render_priority = 0
 flags_transparent = false
-flags_unshaded = false
+flags_unshaded = true
 flags_vertex_lighting = false
 flags_no_depth_test = false
 flags_use_point_size = false

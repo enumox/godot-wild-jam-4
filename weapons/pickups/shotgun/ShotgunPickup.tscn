@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://weapons/pickups/WeaponPickup.tscn" type="PackedScene" id=1]
+[ext_resource path="res://weapons/shotgun/Shotgun.tscn" type="PackedScene" id=2]
+
+[node name="ShotgunPickup" instance=ExtResource( 1 )]
+weapon = ExtResource( 2 )
+
