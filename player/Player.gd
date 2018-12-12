@@ -54,6 +54,7 @@ func get_direction(motion : Vector3) -> Vector3:
 	return direction.normalized()
 
 func take_damage(damage : float, knock_back_force : float = 0) -> void:
+	print('damaged: ' + str(damage))
 	health = max(health - damage, 0)
 	emit_signal('damaged')
 	emit_signal('health_changed', health)
@@ -67,7 +68,6 @@ func heal(amount : int) -> bool:
 	emit_signal('health_changed', health)
 	emit_signal('healed')
 	return true
-	
 
 func _on_WeaponsManager_weapon_changed(weapon) -> void:
 	emit_signal('weapon_changed', weapon)

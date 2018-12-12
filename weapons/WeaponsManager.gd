@@ -22,9 +22,6 @@ func _ready() -> void:
 	emit_signal('weapon_changed', initial_weapon)
 
 func _process(delta : float) -> void:
-	if Input.is_action_just_pressed('ui_accept'):
-		add_weapon(load("res://weapons/Shotgun.tscn"))
-	
 	if Input.is_action_pressed('select_pistol'):
 		switch_weapon(0)
 	elif Input.is_action_pressed('select_shotgun'):

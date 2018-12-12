@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://weapons/pickups/shotgun/ShotgunPickup.tscn" type="PackedScene" id=1]
 [ext_resource path="res://actors/enemies/melee-enemy/MeleeEnemy.tscn" type="PackedScene" id=2]
@@ -7,13 +7,14 @@
 [ext_resource path="res://weapons/pickups/health/HealthPickup.tscn" type="PackedScene" id=5]
 [ext_resource path="res://actors/enemies/ranged-enemy/RangedEnemy.tscn" type="PackedScene" id=6]
 [ext_resource path="res://actors/enemies/ranged-shotgun-enemy/RangedShotgunEnemy.tscn" type="PackedScene" id=7]
-[ext_resource path="res://player/Player.tscn" type="PackedScene" id=8]
-[ext_resource path="res://interface/GUI.gd" type="Script" id=9]
-[ext_resource path="res://interface/hud/crosshair.png" type="Texture" id=10]
-[ext_resource path="res://interface/fonts/uni0553.ttf" type="DynamicFontData" id=11]
-[ext_resource path="res://weapons/machine-gun/machinegun-icon.png" type="Texture" id=12]
-[ext_resource path="res://interface/health-icon.png" type="Texture" id=13]
-[ext_resource path="res://weapons/pickups/ammo/AmmoPickup.tscn" type="PackedScene" id=14]
+[ext_resource path="res://actors/enemies/ranged-slow-enemy/RangedSlowEnemy.tscn" type="PackedScene" id=8]
+[ext_resource path="res://player/Player.tscn" type="PackedScene" id=9]
+[ext_resource path="res://interface/GUI.gd" type="Script" id=10]
+[ext_resource path="res://interface/hud/crosshair.png" type="Texture" id=11]
+[ext_resource path="res://interface/fonts/uni0553.ttf" type="DynamicFontData" id=12]
+[ext_resource path="res://weapons/machine-gun/machinegun-icon.png" type="Texture" id=13]
+[ext_resource path="res://interface/health-icon.png" type="Texture" id=14]
+[ext_resource path="res://weapons/pickups/ammo/AmmoPickup.tscn" type="PackedScene" id=15]
 
 [sub_resource type="SpatialMaterial" id=1]
 
@@ -212,7 +213,7 @@ outline_size = 0
 outline_color = Color( 1, 1, 1, 1 )
 use_mipmaps = false
 use_filter = false
-font_data = ExtResource( 11 )
+font_data = ExtResource( 12 )
 
 [node name="Game" type="Node"]
 
@@ -692,17 +693,12 @@ max_distance_to_player = 20.0
 
 [node name="RangedShotgunEnemy" parent="TestMap" instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -29.5, 3.5, 25.5 )
-input_ray_pickable = true
-input_capture_on_drag = false
-collision_layer = 1
-collision_mask = 1
-move_lock_x = false
-move_lock_y = false
-move_lock_z = false
-collision/safe_margin = 0.001
-attack_delay = null
 
-[node name="Player" parent="." instance=ExtResource( 8 )]
+[node name="RangedSlowEnemy" parent="TestMap" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -31.5, 3.5, 1.5 )
+
+[node name="Player" parent="." instance=ExtResource( 9 )]
+editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 4.08518, 0 )
 move_speed = 25.0
 gravity = 5.0
@@ -729,12 +725,13 @@ omni_shadow_mode = 1
 omni_shadow_detail = 1
 
 [node name="GUI" type="CanvasLayer" parent="."]
+editor/display_folded = true
 layer = 1
 offset = Vector2( 0, 0 )
 rotation = 0.0
 scale = Vector2( 1, 1 )
 transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-script = ExtResource( 9 )
+script = ExtResource( 10 )
 
 [node name="HUD" type="Control" parent="GUI"]
 anchor_left = 0.0
@@ -763,7 +760,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 10 )
+texture = ExtResource( 11 )
 expand = true
 stretch_mode = 0
 
@@ -828,7 +825,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 12 )
+texture = ExtResource( 13 )
 expand = true
 stretch_mode = 6
 
@@ -847,7 +844,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 13 )
+texture = ExtResource( 14 )
 expand = true
 stretch_mode = 6
 
@@ -899,7 +896,7 @@ wait_time = 0.25
 one_shot = true
 autostart = false
 
-[node name="AmmoPickup" parent="." instance=ExtResource( 14 )]
+[node name="AmmoPickup" parent="." instance=ExtResource( 15 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 2, -4.5 )
 
 [connection signal="ammo_changed" from="Player" to="GUI" method="_on_Player_ammo_changed"]

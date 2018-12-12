@@ -20,6 +20,11 @@ _global_script_classes=[ {
 "path": "res://actors/enemies/Enemy.gd"
 }, {
 "base": "Area",
+"class": "EnemyProjectile",
+"language": "GDScript",
+"path": "res://actors/enemies/ranged-slow-enemy/EnemyProjectile.gd"
+}, {
+"base": "Area",
 "class": "Pickup",
 "language": "GDScript",
 "path": "res://weapons/pickups/ammo/Pickup.gd"
@@ -52,6 +57,7 @@ _global_script_classes=[ {
 _global_script_class_icons={
 "AmmoPickup": "",
 "Enemy": "",
+"EnemyProjectile": "",
 "Pickup": "",
 "Player": "",
 "PlayerCamera": "",

@@ -1,14 +1,5 @@
-extends "res://actors/enemies/Enemy.gd"
-
-export var max_distance_to_player : float
-export(float, 0.1, 1.0) var chance_to_shoot : float
-export(float, 0.1, 1.0) var chance_to_miss : float
-
-onready var raycast : = $RayCast as RayCast
-
-func _ready() -> void:
-	._ready()
-	randomize()
+extends "res://actors/enemies/ranged-enemy/RangedEnemy.gd"
+export var projectile : PackedScene
 
 func _physics_process(delta : float) -> void:
 	if player == null:
@@ -27,7 +18,9 @@ func _physics_process(delta : float) -> void:
 			if is_player_in_sight:
 				#Play shoot animation, check if misses
 				if randf() > chance_to_miss:
-					shoot()
+					var new_projectile = projectile.instance()
+					new_projectile.initialize((player.global_transform.origin - global_transform.origin).normalized())
+					add_child(new_projectile)
 
 func shoot() -> void:
-	player.take_damage(damage)
+	pass

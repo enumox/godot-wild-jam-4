@@ -26,6 +26,9 @@ func _physics_process(delta : float) -> void:
 				if is_player_in_sight:
 					#Play shoot animation, check if misses
 					if randf() > chance_to_miss:
-						var distance = player.global_transform.origin.distance_to(global_transform.origin)
-						var modifier = 1.25 - distance / max_hit_distance if distance < max_hit_distance else max_distance_modifier
-						player.take_damage(damage * modifier)
+						shoot()
+
+func shoot() -> void:
+	var distance = player.global_transform.origin.distance_to(global_transform.origin)
+	var modifier = 1.25 - distance / max_hit_distance if distance < max_hit_distance else max_distance_modifier
+	player.take_damage(damage * modifier)
