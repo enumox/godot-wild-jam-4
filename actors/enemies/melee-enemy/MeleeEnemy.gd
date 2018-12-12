@@ -11,8 +11,11 @@ func _physics_process(delta : float) -> void:
 	direction.y = 0
 	direction = direction.normalized()
 	
+	if animation.animation == 'idle' or animation.animation == 'attack' and animation.frame == 3:
+		animation.play('walk')
+	
 	move_and_slide(direction * move_speed, Vector3(0, 1, 0))
 	if player.global_transform.origin.distance_to(global_transform.origin) < attack_distance and timer.is_stopped():
 		timer.start()
 		player.take_damage(damage,knock_back_force)
-
+		animation.play('attack')
