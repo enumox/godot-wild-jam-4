@@ -18,201 +18,38 @@
 
 [sub_resource type="SpatialMaterial" id=1]
 
-render_priority = 0
-flags_transparent = false
-flags_unshaded = false
-flags_vertex_lighting = false
-flags_no_depth_test = false
-flags_use_point_size = false
-flags_world_triplanar = false
-flags_fixed_size = false
-flags_albedo_tex_force_srgb = false
-flags_do_not_receive_shadows = false
-flags_disable_ambient_light = false
-flags_ensure_correct_normals = false
-vertex_color_use_as_albedo = false
-vertex_color_is_srgb = false
-params_diffuse_mode = 0
-params_specular_mode = 0
-params_blend_mode = 0
-params_cull_mode = 0
-params_depth_draw_mode = 0
-params_line_width = 1.0
-params_point_size = 1.0
-params_billboard_mode = 0
-params_billboard_keep_scale = false
-params_grow = false
-params_use_alpha_scissor = false
 albedo_color = Color( 0.305882, 0.262745, 0.196078, 1 )
-metallic = 0.0
-metallic_specular = 0.5
-metallic_texture_channel = 0
-roughness = 1.0
-roughness_texture_channel = 0
-emission_enabled = false
-normal_enabled = false
-rim_enabled = false
-clearcoat_enabled = false
-anisotropy_enabled = false
-ao_enabled = false
-depth_enabled = false
-subsurf_scatter_enabled = false
-transmission_enabled = false
-refraction_enabled = false
-detail_enabled = false
-uv1_scale = Vector3( 1, 1, 1 )
-uv1_offset = Vector3( 0, 0, 0 )
-uv1_triplanar = false
-uv1_triplanar_sharpness = 1.0
-uv2_scale = Vector3( 1, 1, 1 )
-uv2_offset = Vector3( 0, 0, 0 )
-uv2_triplanar = false
-uv2_triplanar_sharpness = 1.0
-proximity_fade_enable = false
-distance_fade_mode = 0
 
 [sub_resource type="SpatialMaterial" id=2]
 
-render_priority = 0
-flags_transparent = false
-flags_unshaded = false
-flags_vertex_lighting = false
-flags_no_depth_test = false
-flags_use_point_size = false
-flags_world_triplanar = false
-flags_fixed_size = false
-flags_albedo_tex_force_srgb = false
-flags_do_not_receive_shadows = false
-flags_disable_ambient_light = false
-flags_ensure_correct_normals = false
-vertex_color_use_as_albedo = false
-vertex_color_is_srgb = false
-params_diffuse_mode = 0
-params_specular_mode = 0
-params_blend_mode = 0
-params_cull_mode = 0
-params_depth_draw_mode = 0
-params_line_width = 1.0
-params_point_size = 1.0
-params_billboard_mode = 0
-params_billboard_keep_scale = false
-params_grow = false
-params_use_alpha_scissor = false
 albedo_color = Color( 0.196078, 0.2, 0.352941, 1 )
-metallic = 0.0
-metallic_specular = 0.5
-metallic_texture_channel = 0
-roughness = 1.0
-roughness_texture_channel = 0
-emission_enabled = false
-normal_enabled = false
-rim_enabled = false
-clearcoat_enabled = false
-anisotropy_enabled = false
 ao_enabled = true
 ao_light_affect = 1.0
 ao_on_uv2 = false
 ao_texture_channel = 0
-depth_enabled = false
-subsurf_scatter_enabled = false
-transmission_enabled = false
-refraction_enabled = false
-detail_enabled = false
-uv1_scale = Vector3( 1, 1, 1 )
-uv1_offset = Vector3( 0, 0, 0 )
-uv1_triplanar = false
-uv1_triplanar_sharpness = 1.0
-uv2_scale = Vector3( 1, 1, 1 )
-uv2_offset = Vector3( 0, 0, 0 )
-uv2_triplanar = false
-uv2_triplanar_sharpness = 1.0
-proximity_fade_enable = false
-distance_fade_mode = 0
 
 [sub_resource type="CubeMesh" id=3]
 
-custom_aabb = AABB( 0, 0, 0, 0, 0, 0 )
-flip_faces = false
 size = Vector3( 5, 6, 25 )
-subdivide_width = 0
-subdivide_height = 0
-subdivide_depth = 0
 
 [sub_resource type="SpatialMaterial" id=4]
 
-render_priority = 0
-flags_transparent = false
-flags_unshaded = false
-flags_vertex_lighting = false
-flags_no_depth_test = false
-flags_use_point_size = false
-flags_world_triplanar = false
-flags_fixed_size = false
-flags_albedo_tex_force_srgb = false
-flags_do_not_receive_shadows = false
-flags_disable_ambient_light = false
-flags_ensure_correct_normals = false
-vertex_color_use_as_albedo = false
-vertex_color_is_srgb = false
-params_diffuse_mode = 0
-params_specular_mode = 0
-params_blend_mode = 0
-params_cull_mode = 0
-params_depth_draw_mode = 0
-params_line_width = 1.0
-params_point_size = 1.0
-params_billboard_mode = 0
-params_billboard_keep_scale = false
-params_grow = false
-params_use_alpha_scissor = false
 albedo_color = Color( 0.423529, 0.215686, 0.215686, 1 )
-metallic = 0.0
-metallic_specular = 0.5
-metallic_texture_channel = 0
-roughness = 1.0
-roughness_texture_channel = 0
-emission_enabled = false
-normal_enabled = false
-rim_enabled = false
-clearcoat_enabled = false
-anisotropy_enabled = false
 ao_enabled = true
 ao_light_affect = 1.0
 ao_on_uv2 = false
 ao_texture_channel = 0
-depth_enabled = false
-subsurf_scatter_enabled = false
-transmission_enabled = false
-refraction_enabled = false
-detail_enabled = false
-uv1_scale = Vector3( 1, 1, 1 )
-uv1_offset = Vector3( 0, 0, 0 )
-uv1_triplanar = false
-uv1_triplanar_sharpness = 1.0
-uv2_scale = Vector3( 1, 1, 1 )
-uv2_offset = Vector3( 0, 0, 0 )
-uv2_triplanar = false
-uv2_triplanar_sharpness = 1.0
-proximity_fade_enable = false
-distance_fade_mode = 0
 
 [sub_resource type="ConvexPolygonShape" id=5]
 
-margin = 0.04
 points = PoolVector3Array( -2.5, 3, 12.5, 2.5, 3, -12.5, 2.5, 3, 12.5, -2.5, 3, -12.5, -2.5, -3, 12.5, 2.5, -3, -12.5, 2.5, -3, 12.5, -2.5, -3, -12.5, 2.5, 3, 12.5, -2.5, 3, -12.5, 2.5, 3, -12.5, -2.5, 3, 12.5, 2.5, -3, 12.5, -2.5, -3, -12.5, 2.5, -3, -12.5, -2.5, -3, 12.5, 2.5, 3, 12.5, -2.5, -3, 12.5, -2.5, 3, 12.5, 2.5, -3, 12.5, 2.5, 3, -12.5, -2.5, -3, -12.5, -2.5, 3, -12.5, 2.5, -3, -12.5 )
 
 [sub_resource type="ConvexPolygonShape" id=6]
 
-margin = 0.04
 points = PoolVector3Array( -2.5, 3, 12.5, 2.5, 3, -12.5, 2.5, 3, 12.5, -2.5, 3, -12.5, -2.5, -3, 12.5, 2.5, -3, -12.5, 2.5, -3, 12.5, -2.5, -3, -12.5, 2.5, 3, 12.5, -2.5, 3, -12.5, 2.5, 3, -12.5, -2.5, 3, 12.5, 2.5, -3, 12.5, -2.5, -3, -12.5, 2.5, -3, -12.5, -2.5, -3, 12.5, 2.5, 3, 12.5, -2.5, -3, 12.5, -2.5, 3, 12.5, 2.5, -3, 12.5, 2.5, 3, -12.5, -2.5, -3, -12.5, -2.5, 3, -12.5, 2.5, -3, -12.5 )
 
 [sub_resource type="DynamicFont" id=7]
 
-size = 16
-outline_size = 0
-outline_color = Color( 1, 1, 1, 1 )
-use_mipmaps = false
-use_filter = false
 font_data = ExtResource( 12 )
 
 [node name="Game" type="Node"]
@@ -222,28 +59,16 @@ font_data = ExtResource( 12 )
 [node name="CSGCombiner" type="CSGCombiner" parent="TestMap"]
 editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0 )
-layers = 1
-operation = 0
 use_collision = true
-snap = 0.001
 
 [node name="CSGBox" type="CSGBox" parent="TestMap/CSGCombiner"]
-layers = 1
-operation = 0
-use_collision = false
-snap = 0.001
-invert_faces = false
 width = 100.0
 height = 7.0
 depth = 100.0
 material = SubResource( 1 )
 
 [node name="CSGBox2" type="CSGBox" parent="TestMap/CSGCombiner"]
-layers = 1
 operation = 2
-use_collision = false
-snap = 0.001
-invert_faces = false
 width = 95.0
 height = 6.0
 depth = 95.0
@@ -255,416 +80,162 @@ editor/display_folded = true
 [node name="MeshInstance" type="MeshInstance" parent="TestMap/Walls"]
 editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 4, 35 )
-layers = 1
-material_override = null
-cast_shadow = 1
-extra_cull_margin = 0.0
-use_in_baked_light = false
-lod_min_distance = 0.0
-lod_min_hysteresis = 0.0
-lod_max_distance = 0.0
-lod_max_hysteresis = 0.0
 mesh = SubResource( 3 )
-skeleton = NodePath("..")
 material/0 = SubResource( 4 )
 
 [node name="StaticBody" type="StaticBody" parent="TestMap/Walls/MeshInstance"]
-input_ray_pickable = true
-input_capture_on_drag = false
-collision_layer = 1
-collision_mask = 1
-constant_linear_velocity = Vector3( 0, 0, 0 )
-constant_angular_velocity = Vector3( 0, 0, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="TestMap/Walls/MeshInstance/StaticBody"]
 shape = SubResource( 5 )
-disabled = false
 
 [node name="MeshInstance7" type="MeshInstance" parent="TestMap/Walls"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 4, -7 )
-layers = 1
-material_override = null
-cast_shadow = 1
-extra_cull_margin = 0.0
-use_in_baked_light = false
-lod_min_distance = 0.0
-lod_min_hysteresis = 0.0
-lod_max_distance = 0.0
-lod_max_hysteresis = 0.0
 mesh = SubResource( 3 )
-skeleton = NodePath("..")
 material/0 = SubResource( 4 )
 
 [node name="StaticBody" type="StaticBody" parent="TestMap/Walls/MeshInstance7"]
-input_ray_pickable = true
-input_capture_on_drag = false
-collision_layer = 1
-collision_mask = 1
-constant_linear_velocity = Vector3( 0, 0, 0 )
-constant_angular_velocity = Vector3( 0, 0, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="TestMap/Walls/MeshInstance7/StaticBody"]
 shape = SubResource( 5 )
-disabled = false
 
 [node name="MeshInstance8" type="MeshInstance" parent="TestMap/Walls"]
 editor/display_folded = true
 transform = Transform( -4.37114e-008, 0, -1, 0, 1, 0, 1, 0, -4.37114e-008, 3, 4, -22 )
-layers = 1
-material_override = null
-cast_shadow = 1
-extra_cull_margin = 0.0
-use_in_baked_light = false
-lod_min_distance = 0.0
-lod_min_hysteresis = 0.0
-lod_max_distance = 0.0
-lod_max_hysteresis = 0.0
 mesh = SubResource( 3 )
-skeleton = NodePath("..")
 material/0 = SubResource( 4 )
 
 [node name="StaticBody" type="StaticBody" parent="TestMap/Walls/MeshInstance8"]
-input_ray_pickable = true
-input_capture_on_drag = false
-collision_layer = 1
-collision_mask = 1
-constant_linear_velocity = Vector3( 0, 0, 0 )
-constant_angular_velocity = Vector3( 0, 0, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="TestMap/Walls/MeshInstance8/StaticBody"]
 shape = SubResource( 5 )
-disabled = false
 
 [node name="MeshInstance9" type="MeshInstance" parent="TestMap/Walls"]
 editor/display_folded = true
 transform = Transform( -4.37114e-008, 0, -1, 0, 1, 0, 1, 0, -4.37114e-008, 35, 4, -22 )
-layers = 1
-material_override = null
-cast_shadow = 1
-extra_cull_margin = 0.0
-use_in_baked_light = false
-lod_min_distance = 0.0
-lod_min_hysteresis = 0.0
-lod_max_distance = 0.0
-lod_max_hysteresis = 0.0
 mesh = SubResource( 3 )
-skeleton = NodePath("..")
 material/0 = SubResource( 4 )
 
 [node name="StaticBody" type="StaticBody" parent="TestMap/Walls/MeshInstance9"]
-input_ray_pickable = true
-input_capture_on_drag = false
-collision_layer = 1
-collision_mask = 1
-constant_linear_velocity = Vector3( 0, 0, 0 )
-constant_angular_velocity = Vector3( 0, 0, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="TestMap/Walls/MeshInstance9/StaticBody"]
 shape = SubResource( 5 )
-disabled = false
 
 [node name="MeshInstance10" type="MeshInstance" parent="TestMap/Walls"]
 editor/display_folded = true
 transform = Transform( -1, 0, 8.74228e-008, 0, 1, 0, -8.74228e-008, 0, -1, -7, 4, -37 )
-layers = 1
-material_override = null
-cast_shadow = 1
-extra_cull_margin = 0.0
-use_in_baked_light = false
-lod_min_distance = 0.0
-lod_min_hysteresis = 0.0
-lod_max_distance = 0.0
-lod_max_hysteresis = 0.0
 mesh = SubResource( 3 )
-skeleton = NodePath("..")
 material/0 = SubResource( 4 )
 
 [node name="StaticBody" type="StaticBody" parent="TestMap/Walls/MeshInstance10"]
-input_ray_pickable = true
-input_capture_on_drag = false
-collision_layer = 1
-collision_mask = 1
-constant_linear_velocity = Vector3( 0, 0, 0 )
-constant_angular_velocity = Vector3( 0, 0, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="TestMap/Walls/MeshInstance10/StaticBody"]
 shape = SubResource( 5 )
-disabled = false
 
 [node name="MeshInstance3" type="MeshInstance" parent="TestMap/Walls"]
 editor/display_folded = true
 transform = Transform( -4.37114e-008, 0, 1, 0, 1, 0, -1, 0, -4.37114e-008, 35, 4, 20 )
-layers = 1
-material_override = null
-cast_shadow = 1
-extra_cull_margin = 0.0
-use_in_baked_light = false
-lod_min_distance = 0.0
-lod_min_hysteresis = 0.0
-lod_max_distance = 0.0
-lod_max_hysteresis = 0.0
 mesh = SubResource( 3 )
-skeleton = NodePath("..")
 material/0 = SubResource( 4 )
 
 [node name="StaticBody" type="StaticBody" parent="TestMap/Walls/MeshInstance3"]
-input_ray_pickable = true
-input_capture_on_drag = false
-collision_layer = 1
-collision_mask = 1
-constant_linear_velocity = Vector3( 0, 0, 0 )
-constant_angular_velocity = Vector3( 0, 0, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="TestMap/Walls/MeshInstance3/StaticBody"]
 shape = SubResource( 5 )
-disabled = false
 
 [node name="MeshInstance6" type="MeshInstance" parent="TestMap/Walls"]
 editor/display_folded = true
 transform = Transform( -4.37114e-008, 0, 1, 0, 1, 0, -1, 0, -4.37114e-008, 3, 4, 20 )
-layers = 1
-material_override = null
-cast_shadow = 1
-extra_cull_margin = 0.0
-use_in_baked_light = false
-lod_min_distance = 0.0
-lod_min_hysteresis = 0.0
-lod_max_distance = 0.0
-lod_max_hysteresis = 0.0
 mesh = SubResource( 3 )
-skeleton = NodePath("..")
 material/0 = SubResource( 4 )
 
 [node name="StaticBody" type="StaticBody" parent="TestMap/Walls/MeshInstance6"]
-input_ray_pickable = true
-input_capture_on_drag = false
-collision_layer = 1
-collision_mask = 1
-constant_linear_velocity = Vector3( 0, 0, 0 )
-constant_angular_velocity = Vector3( 0, 0, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="TestMap/Walls/MeshInstance6/StaticBody"]
 shape = SubResource( 5 )
-disabled = false
 
 [node name="MeshInstance11" type="MeshInstance" parent="TestMap/Walls"]
 editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 4, 30 )
-layers = 1
-material_override = null
-cast_shadow = 1
-extra_cull_margin = 0.0
-use_in_baked_light = false
-lod_min_distance = 0.0
-lod_min_hysteresis = 0.0
-lod_max_distance = 0.0
-lod_max_hysteresis = 0.0
 mesh = SubResource( 3 )
-skeleton = NodePath("..")
 material/0 = SubResource( 4 )
 
 [node name="StaticBody" type="StaticBody" parent="TestMap/Walls/MeshInstance11"]
-input_ray_pickable = true
-input_capture_on_drag = false
-collision_layer = 1
-collision_mask = 1
-constant_linear_velocity = Vector3( 0, 0, 0 )
-constant_angular_velocity = Vector3( 0, 0, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="TestMap/Walls/MeshInstance11/StaticBody"]
 shape = SubResource( 5 )
-disabled = false
 
 [node name="MeshInstance12" type="MeshInstance" parent="TestMap/Walls"]
 editor/display_folded = true
 transform = Transform( -4.37114e-008, 0, -1, 0, 1, 0, 1, 0, -4.37114e-008, -22, 4, 20 )
-layers = 1
-material_override = null
-cast_shadow = 1
-extra_cull_margin = 0.0
-use_in_baked_light = false
-lod_min_distance = 0.0
-lod_min_hysteresis = 0.0
-lod_max_distance = 0.0
-lod_max_hysteresis = 0.0
 mesh = SubResource( 3 )
-skeleton = NodePath("..")
 material/0 = SubResource( 4 )
 
 [node name="StaticBody" type="StaticBody" parent="TestMap/Walls/MeshInstance12"]
-input_ray_pickable = true
-input_capture_on_drag = false
-collision_layer = 1
-collision_mask = 1
-constant_linear_velocity = Vector3( 0, 0, 0 )
-constant_angular_velocity = Vector3( 0, 0, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="TestMap/Walls/MeshInstance12/StaticBody"]
 shape = SubResource( 5 )
-disabled = false
 
 [node name="MeshInstance13" type="MeshInstance" parent="TestMap/Walls"]
 editor/display_folded = true
 transform = Transform( -4.37114e-008, 0, -1, 0, 1, 0, 1, 0, -4.37114e-008, -29, 4, 32 )
-layers = 1
-material_override = null
-cast_shadow = 1
-extra_cull_margin = 0.0
-use_in_baked_light = false
-lod_min_distance = 0.0
-lod_min_hysteresis = 0.0
-lod_max_distance = 0.0
-lod_max_hysteresis = 0.0
 mesh = SubResource( 3 )
-skeleton = NodePath("..")
 material/0 = SubResource( 4 )
 
 [node name="StaticBody" type="StaticBody" parent="TestMap/Walls/MeshInstance13"]
-input_ray_pickable = true
-input_capture_on_drag = false
-collision_layer = 1
-collision_mask = 1
-constant_linear_velocity = Vector3( 0, 0, 0 )
-constant_angular_velocity = Vector3( 0, 0, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="TestMap/Walls/MeshInstance13/StaticBody"]
 shape = SubResource( 5 )
-disabled = false
 
 [node name="MeshInstance14" type="MeshInstance" parent="TestMap/Walls"]
 editor/display_folded = true
 transform = Transform( -1, 0, 8.74228e-008, 0, 1, 0, -8.74228e-008, 0, -1, -44, 4, 22 )
-layers = 1
-material_override = null
-cast_shadow = 1
-extra_cull_margin = 0.0
-use_in_baked_light = false
-lod_min_distance = 0.0
-lod_min_hysteresis = 0.0
-lod_max_distance = 0.0
-lod_max_hysteresis = 0.0
 mesh = SubResource( 3 )
-skeleton = NodePath("..")
 material/0 = SubResource( 4 )
 
 [node name="StaticBody" type="StaticBody" parent="TestMap/Walls/MeshInstance14"]
-input_ray_pickable = true
-input_capture_on_drag = false
-collision_layer = 1
-collision_mask = 1
-constant_linear_velocity = Vector3( 0, 0, 0 )
-constant_angular_velocity = Vector3( 0, 0, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="TestMap/Walls/MeshInstance14/StaticBody"]
 shape = SubResource( 5 )
-disabled = false
 
 [node name="MeshInstance2" type="MeshInstance" parent="TestMap/Walls"]
 editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 4, 35 )
-layers = 1
-material_override = null
-cast_shadow = 1
-extra_cull_margin = 0.0
-use_in_baked_light = false
-lod_min_distance = 0.0
-lod_min_hysteresis = 0.0
-lod_max_distance = 0.0
-lod_max_hysteresis = 0.0
 mesh = SubResource( 3 )
-skeleton = NodePath("..")
 material/0 = SubResource( 4 )
 
 [node name="StaticBody" type="StaticBody" parent="TestMap/Walls/MeshInstance2"]
-input_ray_pickable = true
-input_capture_on_drag = false
-collision_layer = 1
-collision_mask = 1
-constant_linear_velocity = Vector3( 0, 0, 0 )
-constant_angular_velocity = Vector3( 0, 0, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="TestMap/Walls/MeshInstance2/StaticBody"]
 shape = SubResource( 6 )
-disabled = false
 
 [node name="MeshInstance4" type="MeshInstance" parent="TestMap/Walls"]
 editor/display_folded = true
 transform = Transform( -4.37114e-008, 0, 1, 0, 1, 0, -1, 0, -4.37114e-008, 35, 4, 8 )
-layers = 1
-material_override = null
-cast_shadow = 1
-extra_cull_margin = 0.0
-use_in_baked_light = false
-lod_min_distance = 0.0
-lod_min_hysteresis = 0.0
-lod_max_distance = 0.0
-lod_max_hysteresis = 0.0
 mesh = SubResource( 3 )
-skeleton = NodePath("..")
 material/0 = SubResource( 4 )
 
 [node name="StaticBody" type="StaticBody" parent="TestMap/Walls/MeshInstance4"]
-input_ray_pickable = true
-input_capture_on_drag = false
-collision_layer = 1
-collision_mask = 1
-constant_linear_velocity = Vector3( 0, 0, 0 )
-constant_angular_velocity = Vector3( 0, 0, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="TestMap/Walls/MeshInstance4/StaticBody"]
 shape = SubResource( 6 )
-disabled = false
 
 [node name="MeshInstance5" type="MeshInstance" parent="TestMap/Walls"]
 editor/display_folded = true
 transform = Transform( -4.37114e-008, 0, 1, 0, 1, 0, -1, 0, -4.37114e-008, 3, 4, 9 )
-layers = 1
-material_override = null
-cast_shadow = 1
-extra_cull_margin = 0.0
-use_in_baked_light = false
-lod_min_distance = 0.0
-lod_min_hysteresis = 0.0
-lod_max_distance = 0.0
-lod_max_hysteresis = 0.0
 mesh = SubResource( 3 )
-skeleton = NodePath("..")
 material/0 = SubResource( 4 )
 
 [node name="StaticBody" type="StaticBody" parent="TestMap/Walls/MeshInstance5"]
-input_ray_pickable = true
-input_capture_on_drag = false
-collision_layer = 1
-collision_mask = 1
-constant_linear_velocity = Vector3( 0, 0, 0 )
-constant_angular_velocity = Vector3( 0, 0, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="TestMap/Walls/MeshInstance5/StaticBody"]
 shape = SubResource( 6 )
-disabled = false
 
 [node name="Lights" type="Spatial" parent="TestMap"]
 
 [node name="SpotLight2" type="OmniLight" parent="TestMap"]
 transform = Transform( 1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 7.08518, 0 )
-layers = 1
-light_color = Color( 1, 1, 1, 1 )
-light_energy = 1.0
-light_indirect_energy = 1.0
-light_negative = false
-light_specular = 0.5
-light_bake_mode = 1
-light_cull_mask = -1
-shadow_enabled = false
-shadow_color = Color( 0, 0, 0, 1 )
-shadow_bias = 0.15
-shadow_contact = 0.0
-shadow_reverse_cull_face = false
-editor_only = false
 omni_range = 50.0
 omni_attenuation = 3.4822
-omni_shadow_mode = 1
-omni_shadow_detail = 1
 
 [node name="ShotgunPickup" parent="TestMap" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 38, 2, 0 )
@@ -705,45 +276,16 @@ gravity = 5.0
 
 [node name="SpotLight" type="OmniLight" parent="Player"]
 transform = Transform( 1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 3, 0 )
-layers = 1
-light_color = Color( 1, 1, 1, 1 )
-light_energy = 1.0
-light_indirect_energy = 1.0
-light_negative = false
-light_specular = 0.5
-light_bake_mode = 1
-light_cull_mask = -1
-shadow_enabled = false
-shadow_color = Color( 0, 0, 0, 1 )
-shadow_bias = 0.15
-shadow_contact = 0.0
-shadow_reverse_cull_face = false
-editor_only = false
 omni_range = 50.0
 omni_attenuation = 3.4822
-omni_shadow_mode = 1
-omni_shadow_detail = 1
 
 [node name="GUI" type="CanvasLayer" parent="."]
 editor/display_folded = true
-layer = 1
-offset = Vector2( 0, 0 )
-rotation = 0.0
-scale = Vector2( 1, 1 )
-transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 script = ExtResource( 10 )
 
 [node name="HUD" type="Control" parent="GUI"]
-anchor_left = 0.0
-anchor_top = 0.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 
 [node name="TextureRect" type="TextureRect" parent="GUI/HUD"]
 anchor_left = 0.5
@@ -754,38 +296,20 @@ margin_left = -3.5
 margin_top = -3.5
 margin_right = 3.5
 margin_bottom = 3.5
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 texture = ExtResource( 11 )
 expand = true
-stretch_mode = 0
 
 [node name="Health" type="Label" parent="GUI/HUD"]
-anchor_left = 0.0
 anchor_top = 1.0
-anchor_right = 0.0
 anchor_bottom = 1.0
 margin_left = 120.0
 margin_top = -30.0
 margin_right = 160.0
 margin_bottom = -7.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_fonts/font = SubResource( 7 )
 text = "150"
 align = 1
 valign = 1
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
 
 [node name="Ammo" type="Label" parent="GUI/HUD"]
 anchor_left = 1.0
@@ -796,19 +320,10 @@ margin_left = -163.0
 margin_top = -30.0
 margin_right = -123.0
 margin_bottom = -7.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_fonts/font = SubResource( 7 )
 text = "30"
 align = 1
 valign = 1
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
 
 [node name="WeaponIcon" type="TextureRect" parent="GUI/HUD"]
 anchor_left = 1.0
@@ -819,31 +334,15 @@ margin_left = -130.0
 margin_top = -25.0
 margin_right = -105.0
 margin_bottom = -10.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 texture = ExtResource( 13 )
 expand = true
 stretch_mode = 6
 
 [node name="HealthIcon" type="TextureRect" parent="GUI/HUD"]
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
 margin_left = 110.0
 margin_top = 155.0
 margin_right = 120.0
 margin_bottom = 170.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 texture = ExtResource( 14 )
 expand = true
 stretch_mode = 6
@@ -851,54 +350,29 @@ stretch_mode = 6
 [node name="DamageOverlay" type="Panel" parent="GUI"]
 visible = false
 self_modulate = Color( 1, 0.141176, 0.141176, 0.435294 )
-anchor_left = 0.0
-anchor_top = 0.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 
 [node name="HealOverlay" type="Panel" parent="GUI"]
 visible = false
 self_modulate = Color( 0, 1, 0.94902, 0.396078 )
-anchor_left = 0.0
-anchor_top = 0.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 
 [node name="AmmoOverlay" type="Panel" parent="GUI"]
 visible = false
 self_modulate = Color( 1, 0.984314, 0, 0.396078 )
-anchor_left = 0.0
-anchor_top = 0.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 
 [node name="Timer" type="Timer" parent="GUI"]
-process_mode = 1
 wait_time = 0.25
 one_shot = true
-autostart = false
 
 [node name="AmmoPickup" parent="." instance=ExtResource( 15 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 2, -4.5 )
 
+[connection signal="area_entered" from="TestMap/RangedEnemy/DetectionArea" to="TestMap/RangedEnemy" method="_on_DetectionArea_area_entered"]
 [connection signal="ammo_changed" from="Player" to="GUI" method="_on_Player_ammo_changed"]
 [connection signal="damaged" from="Player" to="GUI" method="_on_Player_damaged"]
 [connection signal="healed" from="Player" to="GUI" method="_on_Player_healed"]
