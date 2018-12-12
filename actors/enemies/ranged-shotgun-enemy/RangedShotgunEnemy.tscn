@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://actors/enemies/ranged-enemy/RangedEnemy.tscn" type="PackedScene" id=1]
+[ext_resource path="res://actors/enemies/ranged-shotgun-enemy/RangedShotgunEnemy.gd" type="Script" id=2]
+
+[node name="RangedShotgunEnemy" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+damage = 30
+max_distance_to_player = 20.0
+max_hit_distance = 20.0
+min_hit_distance = 7.0
+max_distance_modifier = 0.25
+
