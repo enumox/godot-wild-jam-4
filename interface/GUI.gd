@@ -5,6 +5,7 @@ onready var timer : = $Timer as Timer
 
 onready var health_label : = $HUD/Health as Label
 onready var ammo_label : = $HUD/Ammo as Label
+onready var weapon_icon : = $HUD/WeaponIcon as TextureRect
 
 func _on_Player_damaged():
 	damage_overlay.show()
@@ -14,7 +15,9 @@ func _on_Player_damaged():
 
 
 func _on_Player_weapon_changed(weapon) -> void:
-	pass # Replace with function body.
+	if weapon_icon == null:
+		yield(get_tree(), 'idle_frame')
+	weapon_icon.texture = weapon.icon
 
 func _on_Player_health_changed(health) -> void:
 	if health_label == null:
