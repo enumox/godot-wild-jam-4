@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://weapons/pickups/shotgun/ShotgunPickup.tscn" type="PackedScene" id=1]
 [ext_resource path="res://actors/enemies/melee-enemy/MeleeEnemy.tscn" type="PackedScene" id=2]
@@ -8,7 +8,8 @@
 [ext_resource path="res://interface/GUI.gd" type="Script" id=6]
 [ext_resource path="res://interface/hud/crosshair.png" type="Texture" id=7]
 [ext_resource path="res://interface/fonts/uni0553.ttf" type="DynamicFontData" id=8]
-[ext_resource path="res://weapons/pickups/ammo/AmmoPickup.tscn" type="PackedScene" id=9]
+[ext_resource path="res://weapons/pickups/health/HealthPickup.tscn" type="PackedScene" id=9]
+[ext_resource path="res://weapons/pickups/ammo/AmmoPickup.tscn" type="PackedScene" id=10]
 
 [sub_resource type="SpatialMaterial" id=1]
 
@@ -679,7 +680,6 @@ transform = Transform( -4.37114e-008, 0, -1, 0, 1, 0, 1, 0, -4.37114e-008, 15, 4
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 4.08518, 0 )
 move_speed = 25.0
 gravity = 5.0
-health = null
 
 [node name="SpotLight" type="OmniLight" parent="Player"]
 transform = Transform( 1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 3, 0 )
@@ -801,13 +801,16 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 
+[node name="HealthPickup" parent="GUI/DamageOverlay" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 2, -2.5 )
+
 [node name="Timer" type="Timer" parent="GUI"]
 process_mode = 1
 wait_time = 0.25
 one_shot = true
 autostart = false
 
-[node name="AmmoPickup" parent="." instance=ExtResource( 9 )]
+[node name="AmmoPickup" parent="." instance=ExtResource( 10 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 2, -4.5 )
 
 [connection signal="ammo_changed" from="Player" to="GUI" method="_on_Player_ammo_changed"]

@@ -3,6 +3,7 @@ class_name Player
 
 signal damaged()
 signal health_changed(health)
+signal healed()
 signal ammo_changed(ammo)
 signal weapon_changed(weapon)
 
@@ -13,7 +14,9 @@ export var move_speed : float
 export var gravity : float
 export var acceleration : float
 export var deceleration : float
-export var health : int
+export var max_health : int
+
+var health : int
 
 var movement : = Vector3()
 var direction : = Vector3()
@@ -21,6 +24,8 @@ var yaw : float = 0
 
 
 func _ready() -> void:
+	health = max_health
+	emit_signal('health_changed', health)
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func _physics_process(delta : float) -> void:
@@ -54,6 +59,15 @@ func take_damage(damage : float, knock_back_force : float = 0) -> void:
 	emit_signal('health_changed', health)
 	if health == 0:
 		get_tree().reload_current_scene()
+
+func heal(amount : int) -> bool:
+	if health == max_health:
+		return false
+	health = min(health + amount, max_health)
+	emit_signal('health_changed', health)
+	emit_signal('healed')
+	return true
+	
 
 func _on_WeaponsManager_weapon_changed(weapon) -> void:
 	emit_signal('weapon_changed', weapon)

@@ -17,6 +17,8 @@ func _on_Player_weapon_changed(weapon) -> void:
 	pass # Replace with function body.
 
 func _on_Player_health_changed(health) -> void:
+	if health_label == null:
+		yield(get_tree(), 'idle_frame')
 	health_label.text = str(health)
 
 func _on_Player_ammo_changed(ammo) -> void:
