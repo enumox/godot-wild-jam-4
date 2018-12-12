@@ -29,7 +29,6 @@ func take_damage(value : int) -> void:
 func _on_DetectionArea_body_entered(body):
 	if body.name != "Player":
 		return
-	print('found player')
 	player = body
 	set_process(true)
 	set_physics_process(true)

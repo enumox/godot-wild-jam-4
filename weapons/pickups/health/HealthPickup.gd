@@ -4,6 +4,8 @@ onready var heal_amount : = 20
 
 func _on_body_entered(body) -> void:
 	var player = body as Player
+	if player == null:
+		return
 	var healed = player.heal(heal_amount)
 	if healed:
 		queue_free()

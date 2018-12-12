@@ -1,6 +1,8 @@
 extends CanvasLayer
 
 onready var damage_overlay : = $DamageOverlay as Panel
+onready var heal_overlay : = $HealOverlay as Panel
+onready var ammo_overlay : = $AmmoOverlay as Panel
 onready var timer : = $Timer as Timer
 
 onready var health_label : = $HUD/Health as Label
@@ -12,7 +14,6 @@ func _on_Player_damaged():
 	timer.start()
 	yield(timer, 'timeout')
 	damage_overlay.hide()
-
 
 func _on_Player_weapon_changed(weapon) -> void:
 	if weapon_icon == null:
@@ -28,3 +29,9 @@ func _on_Player_ammo_changed(ammo) -> void:
 	if ammo_label == null:
 		yield(get_tree(), 'idle_frame')
 	ammo_label.text = str(ammo)
+
+func _on_Player_healed():
+	heal_overlay.show()
+	timer.start()
+	yield(timer, 'timeout')
+	heal_overlay.hide()
