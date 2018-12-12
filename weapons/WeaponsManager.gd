@@ -1,6 +1,8 @@
 extends Spatial
 class_name WeaponsManager
 
+signal weapon_changed(weapon)
+
 onready var aim : = $Aim as RayCast
 onready var hand : = $Hand
 
@@ -17,6 +19,7 @@ func _ready() -> void:
 	initial_weapon.initialize(aim)
 	selected_index = initial_weapon.selection_index
 	weapons[selected_index] = initial_weapon
+	emit_signal('weapon_changed', initial_weapon)
 
 func _process(delta : float) -> void:
 	if Input.is_action_just_pressed('ui_accept'):
@@ -34,6 +37,7 @@ func _process(delta : float) -> void:
 func add_weapon(weapon) -> void:
 	var new_weapon = weapon.instance()
 	new_weapon.initialize(aim)
+	selected_index = new_weapon.selection_index
 	if weapons[new_weapon.selection_index] != null:
 		weapons[new_weapon.selection_index].ammo += new_weapon.ammo
 		return
@@ -42,6 +46,7 @@ func add_weapon(weapon) -> void:
 	yield(hand.get_child(0).drop(), 'completed')
 	hand.remove_child(hand.get_child(0))
 	hand.add_child(new_weapon)
+	emit_signal('weapon_changed', new_weapon)
 
 func switch_weapon(index : int) -> void:
 	if weapons[index] == null or index == selected_index:
@@ -50,4 +55,5 @@ func switch_weapon(index : int) -> void:
 	yield(hand.get_child(0).drop(), 'completed')
 	hand.remove_child(hand.get_child(0))
 	hand.add_child(weapons[index])
+	emit_signal('weapon_changed', weapons[index])
 	

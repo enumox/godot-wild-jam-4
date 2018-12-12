@@ -146,3 +146,4 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.403497, -0.678123, 0.549766 
 
 [node name="Pistol" parent="Camera/WeaponsManager/Hand" instance=ExtResource( 4 )]
 
+[connection signal="weapon_changed" from="Camera/WeaponsManager" to="." method="_on_WeaponsManager_weapon_changed"]

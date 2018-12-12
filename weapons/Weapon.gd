@@ -1,6 +1,8 @@
 extends Spatial
 class_name Weapon
 
+signal ammo_changed(ammo)
+
 export(int, 1, 10) var fire_rate : int = 1
 export var ammo : int = 15
 export var damage : float = 5.0
@@ -17,11 +19,12 @@ func initialize(raycast : RayCast) -> void:
 func _ready() -> void:
 	timer.wait_time = 1.0 / fire_rate
 	connect('tree_entered', self, '_on_tree_entered')
-	connect('tree_exiting', self, '_on_tree_exiting')
+	emit_signal('ammo_changed', ammo)
 	animation.play('pickup')
 
 func _on_tree_entered() -> void:
 	animation.play('pickup')
+	emit_signal('ammo_changed', ammo)
 
 func drop() -> void:
 	animation.play('drop')
@@ -35,6 +38,7 @@ func _process(delta : float) -> void:
 func shoot() -> void:
 	animation.play('shoot')
 	ammo -= 1
+	emit_signal('ammo_changed', ammo)
 	if raycast.is_colliding():
 		var enemy = raycast.get_collider() as Enemy
 		if enemy != null:

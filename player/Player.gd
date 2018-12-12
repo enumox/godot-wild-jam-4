@@ -2,6 +2,9 @@ extends KinematicBody
 class_name Player
 
 signal damaged()
+signal health_changed(health)
+signal ammo_changed(ammo)
+signal weapon_changed(weapon)
 
 onready var camera : = $Camera as PlayerCamera
 onready var weapon_manager : = $Camera/WeaponsManager as WeaponsManager
@@ -15,6 +18,7 @@ export var health : int
 var movement : = Vector3()
 var direction : = Vector3()
 var yaw : float = 0
+
 
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -47,12 +51,14 @@ func get_direction(motion : Vector3) -> Vector3:
 func take_damage(damage : float, knock_back_force : float = 0) -> void:
 	health = max(health - damage, 0)
 	emit_signal('damaged')
+	emit_signal('health_changed', health)
 	if health == 0:
 		get_tree().reload_current_scene()
 
+func _on_WeaponsManager_weapon_changed(weapon) -> void:
+	emit_signal('weapon_changed', weapon)
+	weapon.connect('ammo_changed', self, '_on_weapon_ammo_changed')
+	emit_signal('ammo_changed', weapon.ammo)
 
-
-
-
-
-
+func _on_weapon_ammo_changed(ammo) -> void:
+	emit_signal('ammo_changed', ammo)

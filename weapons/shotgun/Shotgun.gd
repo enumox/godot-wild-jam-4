@@ -6,6 +6,7 @@ export(float, 0.1, 0.75) var max_distance_modifier : float = 0.25
 func shoot() -> void:
 	animation.play('shoot')
 	ammo -= 1
+	emit_signal('ammo_changed', ammo)
 	if raycast.is_colliding():
 		var enemy = raycast.get_collider() as Enemy
 		if enemy != null:
