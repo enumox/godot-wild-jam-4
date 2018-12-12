@@ -7,6 +7,7 @@ export(int, 1, 10) var fire_rate : int = 1
 export var ammo : int = 15
 export var damage : float = 5.0
 export(int, 0, 3) var selection_index : = 0
+export var ammo_pickup_increase : = 5
 
 onready var timer : = $Timer as Timer
 onready var animation : = $AnimationPlayer as AnimationPlayer
@@ -43,3 +44,8 @@ func shoot() -> void:
 		var enemy = raycast.get_collider() as Enemy
 		if enemy != null:
 			enemy.take_damage(damage)
+
+func add_ammo() -> void:
+	ammo += ammo_pickup_increase
+	emit_signal('ammo_changed', ammo)
+

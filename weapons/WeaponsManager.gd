@@ -56,4 +56,6 @@ func switch_weapon(index : int) -> void:
 	hand.remove_child(hand.get_child(0))
 	hand.add_child(weapons[index])
 	emit_signal('weapon_changed', weapons[index])
-	
+
+func add_ammo() -> void:
+	weapons[selected_index].add_ammo()
