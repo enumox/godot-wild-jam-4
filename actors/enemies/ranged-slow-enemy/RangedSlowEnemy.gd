@@ -24,7 +24,6 @@ func _physics_process(delta : float) -> void:
 					new_projectile.initialize((player.global_transform.origin - global_transform.origin).normalized())
 					add_child(new_projectile)
 					animation.play('attack')
-					
 
 func shoot() -> void:
 	pass

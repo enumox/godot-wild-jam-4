@@ -4,9 +4,13 @@ onready var damage_overlay : = $DamageOverlay as Panel
 onready var heal_overlay : = $HealOverlay as Panel
 onready var ammo_overlay : = $AmmoOverlay as Panel
 onready var timer : = $Timer as Timer
+onready var message_timer : = $MessageTimer as Timer
+
 
 onready var health_label : = $HUD/Health as Label
 onready var ammo_label : = $HUD/Ammo as Label
+onready var gems_label : = $HUD/Gems as Label
+onready var messages_label : = $HUD/Messages as Label
 onready var weapon_icon : = $HUD/WeaponIcon as TextureRect
 
 func _on_Player_damaged():
@@ -35,3 +39,16 @@ func _on_Player_healed():
 	timer.start()
 	yield(timer, 'timeout')
 	heal_overlay.hide()
+
+func _on_Player_gems_changed(amount):
+	if messages_label == null:
+		yield(get_tree(), 'idle_frame')
+	gems_label.text = str(amount)
+	var remainig = 5 - amount
+	if remainig == 0:
+		messages_label.text = 'All gems collected!\nGet them to the portal'
+	messages_label.text = str(remainig) + ' gems left'
+	messages_label.show()
+	message_timer.start()
+	yield(message_timer, 'timeout')
+	messages_label.hide()

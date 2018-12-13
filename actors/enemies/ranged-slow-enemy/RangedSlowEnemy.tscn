@@ -43,7 +43,7 @@ animations = [ {
 "speed": 20.0
 } ]
 
-[node name="RangedSlowEnemy" index="0" instance=ExtResource( 1 )]
+[node name="RangedSlowEnemy" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
 health = 75
 move_speed = 5.0

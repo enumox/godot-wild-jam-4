@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://weapons/pickups/shotgun/ShotgunPickup.tscn" type="PackedScene" id=1]
 [ext_resource path="res://actors/enemies/melee-enemy/MeleeEnemy.tscn" type="PackedScene" id=2]
@@ -8,13 +8,18 @@
 [ext_resource path="res://actors/enemies/ranged-enemy/RangedEnemy.tscn" type="PackedScene" id=6]
 [ext_resource path="res://actors/enemies/ranged-shotgun-enemy/RangedShotgunEnemy.tscn" type="PackedScene" id=7]
 [ext_resource path="res://actors/enemies/ranged-slow-enemy/RangedSlowEnemy.tscn" type="PackedScene" id=8]
-[ext_resource path="res://player/Player.tscn" type="PackedScene" id=9]
-[ext_resource path="res://interface/GUI.gd" type="Script" id=10]
-[ext_resource path="res://interface/hud/crosshair.png" type="Texture" id=11]
-[ext_resource path="res://interface/fonts/uni0553.ttf" type="DynamicFontData" id=12]
-[ext_resource path="res://weapons/machine-gun/machinegun-icon.png" type="Texture" id=13]
-[ext_resource path="res://interface/health-icon.png" type="Texture" id=14]
-[ext_resource path="res://weapons/pickups/ammo/AmmoPickup.tscn" type="PackedScene" id=15]
+[ext_resource path="res://world/floor-texture.png" type="Texture" id=9]
+[ext_resource path="res://world/gems/Gem.tscn" type="PackedScene" id=10]
+[ext_resource path="res://world/portal/Portal.tscn" type="PackedScene" id=11]
+[ext_resource path="res://player/Player.tscn" type="PackedScene" id=12]
+[ext_resource path="res://interface/GUI.gd" type="Script" id=13]
+[ext_resource path="res://interface/hud/crosshair.png" type="Texture" id=14]
+[ext_resource path="res://interface/fonts/uni0553.ttf" type="DynamicFontData" id=15]
+[ext_resource path="res://weapons/machine-gun/machinegun-icon.png" type="Texture" id=16]
+[ext_resource path="res://interface/gems-icons.png" type="Texture" id=17]
+[ext_resource path="res://interface/health-icon.png" type="Texture" id=18]
+[ext_resource path="res://interface/fonts/uni0553_16.tres" type="DynamicFont" id=19]
+[ext_resource path="res://weapons/pickups/ammo/AmmoPickup.tscn" type="PackedScene" id=20]
 
 [sub_resource type="SpatialMaterial" id=1]
 
@@ -22,7 +27,7 @@ albedo_color = Color( 0.305882, 0.262745, 0.196078, 1 )
 
 [sub_resource type="SpatialMaterial" id=2]
 
-albedo_color = Color( 0.196078, 0.2, 0.352941, 1 )
+albedo_color = Color( 0.34902, 0.34902, 0.34902, 1 )
 ao_enabled = true
 ao_light_affect = 1.0
 ao_on_uv2 = false
@@ -48,9 +53,17 @@ points = PoolVector3Array( -2.5, 3, 12.5, 2.5, 3, -12.5, 2.5, 3, 12.5, -2.5, 3, 
 
 points = PoolVector3Array( -2.5, 3, 12.5, 2.5, 3, -12.5, 2.5, 3, 12.5, -2.5, 3, -12.5, -2.5, -3, 12.5, 2.5, -3, -12.5, 2.5, -3, 12.5, -2.5, -3, -12.5, 2.5, 3, 12.5, -2.5, 3, -12.5, 2.5, 3, -12.5, -2.5, 3, 12.5, 2.5, -3, 12.5, -2.5, -3, -12.5, 2.5, -3, -12.5, -2.5, -3, 12.5, 2.5, 3, 12.5, -2.5, -3, 12.5, -2.5, 3, 12.5, 2.5, -3, 12.5, 2.5, 3, -12.5, -2.5, -3, -12.5, -2.5, 3, -12.5, 2.5, -3, -12.5 )
 
+[sub_resource type="QuadMesh" id=8]
+
+size = Vector2( 4, 4 )
+
+[sub_resource type="SpatialMaterial" id=9]
+
+albedo_texture = ExtResource( 9 )
+
 [sub_resource type="DynamicFont" id=7]
 
-font_data = ExtResource( 12 )
+font_data = ExtResource( 15 )
 
 [node name="Game" type="Node"]
 
@@ -268,7 +281,76 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -29.5, 3.5, 25.5 )
 [node name="RangedSlowEnemy" parent="TestMap" instance=ExtResource( 8 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -31.5, 3.5, 1.5 )
 
-[node name="Player" parent="." instance=ExtResource( 9 )]
+[node name="Floor" type="Spatial" parent="TestMap"]
+editor/display_folded = true
+
+[node name="MeshInstance" type="MeshInstance" parent="TestMap/Floor"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-008, 1, 0, -1, -4.37114e-008, 0, 1.20245, 13.2335 )
+mesh = SubResource( 8 )
+material/0 = SubResource( 9 )
+
+[node name="MeshInstance11" type="MeshInstance" parent="TestMap/Floor"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-008, 1, 0, -1, -4.37114e-008, 12, 1.20245, 13.2335 )
+mesh = SubResource( 8 )
+material/0 = SubResource( 9 )
+
+[node name="MeshInstance3" type="MeshInstance" parent="TestMap/Floor"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-008, 1, 0, -1, -4.37114e-008, -4, 1.20245, 13.2335 )
+mesh = SubResource( 8 )
+material/0 = SubResource( 9 )
+
+[node name="MeshInstance10" type="MeshInstance" parent="TestMap/Floor"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-008, 1, 0, -1, -4.37114e-008, 8, 1.20245, 13.2335 )
+mesh = SubResource( 8 )
+material/0 = SubResource( 9 )
+
+[node name="MeshInstance6" type="MeshInstance" parent="TestMap/Floor"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-008, 1, 0, -1, -4.37114e-008, -8, 1.20245, 13.2335 )
+mesh = SubResource( 8 )
+material/0 = SubResource( 9 )
+
+[node name="MeshInstance7" type="MeshInstance" parent="TestMap/Floor"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-008, 1, 0, -1, -4.37114e-008, 4, 1.20245, 13.2335 )
+mesh = SubResource( 8 )
+material/0 = SubResource( 9 )
+
+[node name="MeshInstance2" type="MeshInstance" parent="TestMap/Floor"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-008, 1, 0, -1, -4.37114e-008, 0, 1.20245, 17.2335 )
+mesh = SubResource( 8 )
+material/0 = SubResource( 9 )
+
+[node name="MeshInstance12" type="MeshInstance" parent="TestMap/Floor"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-008, 1, 0, -1, -4.37114e-008, 12, 1.20245, 17.2335 )
+mesh = SubResource( 8 )
+material/0 = SubResource( 9 )
+
+[node name="MeshInstance4" type="MeshInstance" parent="TestMap/Floor"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-008, 1, 0, -1, -4.37114e-008, -4, 1.20245, 17.2335 )
+mesh = SubResource( 8 )
+material/0 = SubResource( 9 )
+
+[node name="MeshInstance9" type="MeshInstance" parent="TestMap/Floor"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-008, 1, 0, -1, -4.37114e-008, 8, 1.20245, 17.2335 )
+mesh = SubResource( 8 )
+material/0 = SubResource( 9 )
+
+[node name="MeshInstance5" type="MeshInstance" parent="TestMap/Floor"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-008, 1, 0, -1, -4.37114e-008, -8, 1.20245, 17.2335 )
+mesh = SubResource( 8 )
+material/0 = SubResource( 9 )
+
+[node name="MeshInstance8" type="MeshInstance" parent="TestMap/Floor"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-008, 1, 0, -1, -4.37114e-008, 4, 1.20245, 17.2335 )
+mesh = SubResource( 8 )
+material/0 = SubResource( 9 )
+
+[node name="Gem" parent="TestMap" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 3, 29 )
+
+[node name="Portal" parent="TestMap" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 4, -9 )
+
+[node name="Player" parent="." instance=ExtResource( 12 )]
 editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 4.08518, 0 )
 move_speed = 25.0
@@ -281,7 +363,7 @@ omni_attenuation = 3.4822
 
 [node name="GUI" type="CanvasLayer" parent="."]
 editor/display_folded = true
-script = ExtResource( 10 )
+script = ExtResource( 13 )
 
 [node name="HUD" type="Control" parent="GUI"]
 anchor_right = 1.0
@@ -296,7 +378,7 @@ margin_left = -3.5
 margin_top = -3.5
 margin_right = 3.5
 margin_bottom = 3.5
-texture = ExtResource( 11 )
+texture = ExtResource( 14 )
 expand = true
 
 [node name="Health" type="Label" parent="GUI/HUD"]
@@ -325,6 +407,14 @@ text = "30"
 align = 1
 valign = 1
 
+[node name="Gems" type="Label" parent="GUI/HUD"]
+margin_right = 20.0
+margin_bottom = 23.0
+custom_fonts/font = SubResource( 7 )
+text = "0"
+align = 1
+valign = 1
+
 [node name="WeaponIcon" type="TextureRect" parent="GUI/HUD"]
 anchor_left = 1.0
 anchor_top = 1.0
@@ -334,18 +424,36 @@ margin_left = -130.0
 margin_top = -25.0
 margin_right = -105.0
 margin_bottom = -10.0
-texture = ExtResource( 13 )
+texture = ExtResource( 16 )
 expand = true
 stretch_mode = 6
+
+[node name="GemsIcon" type="TextureRect" parent="GUI/HUD"]
+margin_left = 20.0
+margin_right = 40.0
+margin_bottom = 23.0
+texture = ExtResource( 17 )
+expand = true
+stretch_mode = 4
 
 [node name="HealthIcon" type="TextureRect" parent="GUI/HUD"]
 margin_left = 110.0
 margin_top = 155.0
 margin_right = 120.0
 margin_bottom = 170.0
-texture = ExtResource( 14 )
+texture = ExtResource( 18 )
 expand = true
 stretch_mode = 6
+
+[node name="Messages" type="Label" parent="GUI/HUD"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 19 )
+align = 1
+valign = 1
+autowrap = true
+uppercase = true
 
 [node name="DamageOverlay" type="Panel" parent="GUI"]
 visible = false
@@ -369,12 +477,17 @@ anchor_bottom = 1.0
 wait_time = 0.25
 one_shot = true
 
-[node name="AmmoPickup" parent="." instance=ExtResource( 15 )]
+[node name="MessageTimer" type="Timer" parent="GUI"]
+wait_time = 3.0
+one_shot = true
+
+[node name="AmmoPickup" parent="." instance=ExtResource( 20 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 2, -4.5 )
 
 [connection signal="area_entered" from="TestMap/RangedEnemy/DetectionArea" to="TestMap/RangedEnemy" method="_on_DetectionArea_area_entered"]
 [connection signal="ammo_changed" from="Player" to="GUI" method="_on_Player_ammo_changed"]
 [connection signal="damaged" from="Player" to="GUI" method="_on_Player_damaged"]
+[connection signal="gems_changed" from="Player" to="GUI" method="_on_Player_gems_changed"]
 [connection signal="healed" from="Player" to="GUI" method="_on_Player_healed"]
 [connection signal="health_changed" from="Player" to="GUI" method="_on_Player_health_changed"]
 [connection signal="weapon_changed" from="Player" to="GUI" method="_on_Player_weapon_changed"]

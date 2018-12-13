@@ -6,6 +6,7 @@ signal health_changed(health)
 signal healed()
 signal ammo_changed(ammo)
 signal weapon_changed(weapon)
+signal gems_changed(amount)
 
 onready var camera : = $Camera as PlayerCamera
 onready var weapon_manager : = $Camera/WeaponsManager as WeaponsManager
@@ -17,7 +18,7 @@ export var deceleration : float
 export var max_health : int
 
 var health : int
-
+var gems : int = 0 setget set_gems
 var movement : = Vector3()
 var direction : = Vector3()
 var yaw : float = 0
@@ -68,6 +69,10 @@ func heal(amount : int) -> bool:
 	emit_signal('health_changed', health)
 	emit_signal('healed')
 	return true
+
+func set_gems(new_value : int) -> void:
+	gems = new_value
+	emit_signal('gems_changed', gems)
 
 func _on_WeaponsManager_weapon_changed(weapon) -> void:
 	emit_signal('weapon_changed', weapon)
