@@ -2,17 +2,16 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/shotgun-ranged-walk-2.png-b0af528b391388ebff8c0905a9e82f7e.s3tc.stex"
-path.etc2="res://.import/shotgun-ranged-walk-2.png-b0af528b391388ebff8c0905a9e82f7e.etc2.stex"
+path="res://.import/shotgun-ranged-walk-2.png-b0af528b391388ebff8c0905a9e82f7e.stex"
 
 [deps]
 
 source_file="res://actors/enemies/ranged-shotgun-enemy/shotgun-ranged-walk-2.png"
-dest_files=[ "res://.import/shotgun-ranged-walk-2.png-b0af528b391388ebff8c0905a9e82f7e.s3tc.stex", "res://.import/shotgun-ranged-walk-2.png-b0af528b391388ebff8c0905a9e82f7e.etc2.stex" ]
+dest_files=[ "res://.import/shotgun-ranged-walk-2.png-b0af528b391388ebff8c0905a9e82f7e.stex" ]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0

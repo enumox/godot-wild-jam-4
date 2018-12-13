@@ -2,17 +2,16 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/melee-attack-1.png-ecf0c289d0f57fab2191d3f71ecffb02.s3tc.stex"
-path.etc2="res://.import/melee-attack-1.png-ecf0c289d0f57fab2191d3f71ecffb02.etc2.stex"
+path="res://.import/melee-attack-1.png-ecf0c289d0f57fab2191d3f71ecffb02.stex"
 
 [deps]
 
 source_file="res://actors/enemies/melee-enemy/melee-attack-1.png"
-dest_files=[ "res://.import/melee-attack-1.png-ecf0c289d0f57fab2191d3f71ecffb02.s3tc.stex", "res://.import/melee-attack-1.png-ecf0c289d0f57fab2191d3f71ecffb02.etc2.stex" ]
+dest_files=[ "res://.import/melee-attack-1.png-ecf0c289d0f57fab2191d3f71ecffb02.stex" ]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0

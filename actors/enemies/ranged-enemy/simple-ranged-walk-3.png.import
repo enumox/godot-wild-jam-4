@@ -2,17 +2,16 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/simple-ranged-walk-3.png-6459cdef5c7beaeb86208d55f3d30d87.s3tc.stex"
-path.etc2="res://.import/simple-ranged-walk-3.png-6459cdef5c7beaeb86208d55f3d30d87.etc2.stex"
+path="res://.import/simple-ranged-walk-3.png-6459cdef5c7beaeb86208d55f3d30d87.stex"
 
 [deps]
 
 source_file="res://actors/enemies/ranged-enemy/simple-ranged-walk-3.png"
-dest_files=[ "res://.import/simple-ranged-walk-3.png-6459cdef5c7beaeb86208d55f3d30d87.s3tc.stex", "res://.import/simple-ranged-walk-3.png-6459cdef5c7beaeb86208d55f3d30d87.etc2.stex" ]
+dest_files=[ "res://.import/simple-ranged-walk-3.png-6459cdef5c7beaeb86208d55f3d30d87.stex" ]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0

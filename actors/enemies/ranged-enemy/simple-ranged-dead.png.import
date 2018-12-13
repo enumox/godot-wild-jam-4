@@ -2,17 +2,16 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/simple-ranged-dead.png-ef0857e41fe8afa33f021e6de9e3bdd4.s3tc.stex"
-path.etc2="res://.import/simple-ranged-dead.png-ef0857e41fe8afa33f021e6de9e3bdd4.etc2.stex"
+path="res://.import/simple-ranged-dead.png-ef0857e41fe8afa33f021e6de9e3bdd4.stex"
 
 [deps]
 
 source_file="res://actors/enemies/ranged-enemy/simple-ranged-dead.png"
-dest_files=[ "res://.import/simple-ranged-dead.png-ef0857e41fe8afa33f021e6de9e3bdd4.s3tc.stex", "res://.import/simple-ranged-dead.png-ef0857e41fe8afa33f021e6de9e3bdd4.etc2.stex" ]
+dest_files=[ "res://.import/simple-ranged-dead.png-ef0857e41fe8afa33f021e6de9e3bdd4.stex" ]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0

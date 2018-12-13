@@ -2,17 +2,16 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/melee-walk-5.png-b8ecd298095eabba0fab1cbf787736db.s3tc.stex"
-path.etc2="res://.import/melee-walk-5.png-b8ecd298095eabba0fab1cbf787736db.etc2.stex"
+path="res://.import/melee-walk-5.png-b8ecd298095eabba0fab1cbf787736db.stex"
 
 [deps]
 
 source_file="res://actors/enemies/melee-enemy/melee-walk-5.png"
-dest_files=[ "res://.import/melee-walk-5.png-b8ecd298095eabba0fab1cbf787736db.s3tc.stex", "res://.import/melee-walk-5.png-b8ecd298095eabba0fab1cbf787736db.etc2.stex" ]
+dest_files=[ "res://.import/melee-walk-5.png-b8ecd298095eabba0fab1cbf787736db.stex" ]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0

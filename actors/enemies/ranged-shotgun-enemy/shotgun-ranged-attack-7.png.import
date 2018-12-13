@@ -2,17 +2,16 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/shotgun-ranged-attack-7.png-e89b3c429c1c122c6f4309ef522612ac.s3tc.stex"
-path.etc2="res://.import/shotgun-ranged-attack-7.png-e89b3c429c1c122c6f4309ef522612ac.etc2.stex"
+path="res://.import/shotgun-ranged-attack-7.png-e89b3c429c1c122c6f4309ef522612ac.stex"
 
 [deps]
 
 source_file="res://actors/enemies/ranged-shotgun-enemy/shotgun-ranged-attack-7.png"
-dest_files=[ "res://.import/shotgun-ranged-attack-7.png-e89b3c429c1c122c6f4309ef522612ac.s3tc.stex", "res://.import/shotgun-ranged-attack-7.png-e89b3c429c1c122c6f4309ef522612ac.etc2.stex" ]
+dest_files=[ "res://.import/shotgun-ranged-attack-7.png-e89b3c429c1c122c6f4309ef522612ac.stex" ]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0

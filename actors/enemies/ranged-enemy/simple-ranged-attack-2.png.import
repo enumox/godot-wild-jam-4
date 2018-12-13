@@ -2,17 +2,16 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/simple-ranged-attack-2.png-a46e6fdd9cb70e32eef9b6cfc0b16dfb.s3tc.stex"
-path.etc2="res://.import/simple-ranged-attack-2.png-a46e6fdd9cb70e32eef9b6cfc0b16dfb.etc2.stex"
+path="res://.import/simple-ranged-attack-2.png-a46e6fdd9cb70e32eef9b6cfc0b16dfb.stex"
 
 [deps]
 
 source_file="res://actors/enemies/ranged-enemy/simple-ranged-attack-2.png"
-dest_files=[ "res://.import/simple-ranged-attack-2.png-a46e6fdd9cb70e32eef9b6cfc0b16dfb.s3tc.stex", "res://.import/simple-ranged-attack-2.png-a46e6fdd9cb70e32eef9b6cfc0b16dfb.etc2.stex" ]
+dest_files=[ "res://.import/simple-ranged-attack-2.png-a46e6fdd9cb70e32eef9b6cfc0b16dfb.stex" ]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0

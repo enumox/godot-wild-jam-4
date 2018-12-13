@@ -5,6 +5,9 @@ func _physics_process(delta : float) -> void:
 	if player == null:
 		return
 	
+	if animation.animation == 'idle' or animation.animation == 'attack' and animation.frame == 8:
+		animation.play('walk')
+	
 	if player.global_transform.origin.distance_to(global_transform.origin) > max_distance_to_player:
 		var direction = player.global_transform.origin - global_transform.origin
 		direction.y = 0
@@ -16,11 +19,12 @@ func _physics_process(delta : float) -> void:
 			timer.start()
 			var is_player_in_sight = (raycast.get_collider() as Player) != null
 			if is_player_in_sight:
-				#Play shoot animation, check if misses
 				if randf() > chance_to_miss:
 					var new_projectile = projectile.instance()
 					new_projectile.initialize((player.global_transform.origin - global_transform.origin).normalized())
 					add_child(new_projectile)
+					animation.play('attack')
+					
 
 func shoot() -> void:
 	pass

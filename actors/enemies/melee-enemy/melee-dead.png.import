@@ -2,17 +2,16 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/melee-dead.png-2158faf7fbd86b839fd913b949fb2168.s3tc.stex"
-path.etc2="res://.import/melee-dead.png-2158faf7fbd86b839fd913b949fb2168.etc2.stex"
+path="res://.import/melee-dead.png-2158faf7fbd86b839fd913b949fb2168.stex"
 
 [deps]
 
 source_file="res://actors/enemies/melee-enemy/melee-dead.png"
-dest_files=[ "res://.import/melee-dead.png-2158faf7fbd86b839fd913b949fb2168.s3tc.stex", "res://.import/melee-dead.png-2158faf7fbd86b839fd913b949fb2168.etc2.stex" ]
+dest_files=[ "res://.import/melee-dead.png-2158faf7fbd86b839fd913b949fb2168.stex" ]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0
