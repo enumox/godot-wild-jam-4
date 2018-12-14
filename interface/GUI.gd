@@ -27,7 +27,7 @@ func _on_Player_weapon_changed(weapon) -> void:
 func _on_Player_health_changed(health) -> void:
 	if health_label == null:
 		yield(get_tree(), 'idle_frame')
-	health_label.text = str(health)
+	health_label.text = str(int(health))
 
 func _on_Player_ammo_changed(ammo) -> void:
 	if ammo_label == null:
@@ -46,8 +46,8 @@ func _on_Player_gems_changed(amount):
 	gems_label.text = str(amount)
 	var remainig = 5 - amount
 	if remainig == 0:
-		messages_label.text = 'All gems collected!\nGet them to the portal'
-	messages_label.text = str(remainig) + ' gems left'
+		messages_label.text = 'All chips collected!\nGet them to the portal'
+	messages_label.text = str(remainig) + ' chips left'
 	messages_label.show()
 	message_timer.start()
 	yield(message_timer, 'timeout')

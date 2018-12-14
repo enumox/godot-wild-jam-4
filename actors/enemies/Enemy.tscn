@@ -6,7 +6,7 @@
 
 [sub_resource type="BoxShape" id=1]
 
-extents = Vector3( 2.5, 2.5, 2.5 )
+extents = Vector3( 1.26812, 1.47238, 1.34906 )
 
 [sub_resource type="SpatialMaterial" id=2]
 
@@ -54,5 +54,10 @@ one_shot = true
 
 [node name="CollisionShape" type="CollisionShape" parent="DetectionArea"]
 shape = SubResource( 4 )
+
+[node name="Sight" type="RayCast" parent="."]
+enabled = true
+
+[node name="VisibilityEnabler" type="VisibilityEnabler" parent="."]
 
 [connection signal="body_entered" from="DetectionArea" to="." method="_on_DetectionArea_body_entered"]

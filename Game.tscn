@@ -1,369 +1,42 @@
-[gd_scene load_steps=30 format=2]
+[gd_scene load_steps=21 format=2]
 
-[ext_resource path="res://weapons/pickups/shotgun/ShotgunPickup.tscn" type="PackedScene" id=1]
-[ext_resource path="res://actors/enemies/melee-enemy/MeleeEnemy.tscn" type="PackedScene" id=2]
-[ext_resource path="res://weapons/pickups/machine-gun/MachineGunPickup.tscn" type="PackedScene" id=3]
-[ext_resource path="res://world/doors/SlidingDoor.tscn" type="PackedScene" id=4]
-[ext_resource path="res://weapons/pickups/health/HealthPickup.tscn" type="PackedScene" id=5]
-[ext_resource path="res://actors/enemies/ranged-enemy/RangedEnemy.tscn" type="PackedScene" id=6]
-[ext_resource path="res://actors/enemies/ranged-shotgun-enemy/RangedShotgunEnemy.tscn" type="PackedScene" id=7]
-[ext_resource path="res://actors/enemies/ranged-slow-enemy/RangedSlowEnemy.tscn" type="PackedScene" id=8]
-[ext_resource path="res://world/floor-texture.png" type="Texture" id=9]
-[ext_resource path="res://world/gems/Gem.tscn" type="PackedScene" id=10]
-[ext_resource path="res://world/portal/Portal.tscn" type="PackedScene" id=11]
-[ext_resource path="res://player/Player.tscn" type="PackedScene" id=12]
-[ext_resource path="res://interface/GUI.gd" type="Script" id=13]
-[ext_resource path="res://interface/hud/crosshair.png" type="Texture" id=14]
-[ext_resource path="res://interface/fonts/uni0553.ttf" type="DynamicFontData" id=15]
-[ext_resource path="res://weapons/machine-gun/machinegun-icon.png" type="Texture" id=16]
-[ext_resource path="res://interface/gems-icons.png" type="Texture" id=17]
-[ext_resource path="res://interface/health-icon.png" type="Texture" id=18]
-[ext_resource path="res://interface/fonts/uni0553_16.tres" type="DynamicFont" id=19]
-[ext_resource path="res://weapons/pickups/ammo/AmmoPickup.tscn" type="PackedScene" id=20]
+[ext_resource path="res://player/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://player/PlayerLight.tscn" type="PackedScene" id=2]
+[ext_resource path="res://interface/GUI.gd" type="Script" id=3]
+[ext_resource path="res://interface/hud/crosshair.png" type="Texture" id=4]
+[ext_resource path="res://interface/fonts/uni0553.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://weapons/machine-gun/machinegun-icon.png" type="Texture" id=6]
+[ext_resource path="res://interface/gems-icons.png" type="Texture" id=7]
+[ext_resource path="res://interface/health-icon.png" type="Texture" id=8]
+[ext_resource path="res://interface/fonts/uni0553_16.tres" type="DynamicFont" id=9]
+[ext_resource path="res://world/World.tscn" type="PackedScene" id=10]
+[ext_resource path="res://actors/enemies/ranged-slow-enemy/RangedSlowEnemy.tscn" type="PackedScene" id=11]
+[ext_resource path="res://actors/enemies/ranged-enemy/RangedEnemy.tscn" type="PackedScene" id=12]
+[ext_resource path="res://actors/enemies/ranged-shotgun-enemy/RangedShotgunEnemy.tscn" type="PackedScene" id=13]
+[ext_resource path="res://weapons/pickups/shotgun/ShotgunPickup.tscn" type="PackedScene" id=14]
+[ext_resource path="res://weapons/pickups/machine-gun/MachineGunPickup.tscn" type="PackedScene" id=15]
+[ext_resource path="res://weapons/pickups/ammo/AmmoPickup.tscn" type="PackedScene" id=16]
+[ext_resource path="res://weapons/pickups/health/HealthPickup.tscn" type="PackedScene" id=17]
+[ext_resource path="res://world/gems/Gem.tscn" type="PackedScene" id=18]
+[ext_resource path="res://world/doors/SlidingDoor.tscn" type="PackedScene" id=19]
 
-[sub_resource type="SpatialMaterial" id=1]
+[sub_resource type="DynamicFont" id=1]
 
-albedo_color = Color( 0.305882, 0.262745, 0.196078, 1 )
-
-[sub_resource type="SpatialMaterial" id=2]
-
-albedo_color = Color( 0.34902, 0.34902, 0.34902, 1 )
-ao_enabled = true
-ao_light_affect = 1.0
-ao_on_uv2 = false
-ao_texture_channel = 0
-
-[sub_resource type="CubeMesh" id=3]
-
-size = Vector3( 5, 6, 25 )
-
-[sub_resource type="SpatialMaterial" id=4]
-
-albedo_color = Color( 0.423529, 0.215686, 0.215686, 1 )
-ao_enabled = true
-ao_light_affect = 1.0
-ao_on_uv2 = false
-ao_texture_channel = 0
-
-[sub_resource type="ConvexPolygonShape" id=5]
-
-points = PoolVector3Array( -2.5, 3, 12.5, 2.5, 3, -12.5, 2.5, 3, 12.5, -2.5, 3, -12.5, -2.5, -3, 12.5, 2.5, -3, -12.5, 2.5, -3, 12.5, -2.5, -3, -12.5, 2.5, 3, 12.5, -2.5, 3, -12.5, 2.5, 3, -12.5, -2.5, 3, 12.5, 2.5, -3, 12.5, -2.5, -3, -12.5, 2.5, -3, -12.5, -2.5, -3, 12.5, 2.5, 3, 12.5, -2.5, -3, 12.5, -2.5, 3, 12.5, 2.5, -3, 12.5, 2.5, 3, -12.5, -2.5, -3, -12.5, -2.5, 3, -12.5, 2.5, -3, -12.5 )
-
-[sub_resource type="ConvexPolygonShape" id=6]
-
-points = PoolVector3Array( -2.5, 3, 12.5, 2.5, 3, -12.5, 2.5, 3, 12.5, -2.5, 3, -12.5, -2.5, -3, 12.5, 2.5, -3, -12.5, 2.5, -3, 12.5, -2.5, -3, -12.5, 2.5, 3, 12.5, -2.5, 3, -12.5, 2.5, 3, -12.5, -2.5, 3, 12.5, 2.5, -3, 12.5, -2.5, -3, -12.5, 2.5, -3, -12.5, -2.5, -3, 12.5, 2.5, 3, 12.5, -2.5, -3, 12.5, -2.5, 3, 12.5, 2.5, -3, 12.5, 2.5, 3, -12.5, -2.5, -3, -12.5, -2.5, 3, -12.5, 2.5, -3, -12.5 )
-
-[sub_resource type="QuadMesh" id=8]
-
-size = Vector2( 4, 4 )
-
-[sub_resource type="SpatialMaterial" id=9]
-
-albedo_texture = ExtResource( 9 )
-
-[sub_resource type="DynamicFont" id=7]
-
-font_data = ExtResource( 15 )
+use_mipmaps = true
+font_data = ExtResource( 5 )
 
 [node name="Game" type="Node"]
 
-[node name="TestMap" type="Spatial" parent="."]
-
-[node name="CSGCombiner" type="CSGCombiner" parent="TestMap"]
+[node name="Player" parent="." instance=ExtResource( 1 )]
 editor/display_folded = true
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0 )
-use_collision = true
-
-[node name="CSGBox" type="CSGBox" parent="TestMap/CSGCombiner"]
-width = 100.0
-height = 7.0
-depth = 100.0
-material = SubResource( 1 )
-
-[node name="CSGBox2" type="CSGBox" parent="TestMap/CSGCombiner"]
-operation = 2
-width = 95.0
-height = 6.0
-depth = 95.0
-material = SubResource( 2 )
-
-[node name="Walls" type="Spatial" parent="TestMap"]
-editor/display_folded = true
-
-[node name="MeshInstance" type="MeshInstance" parent="TestMap/Walls"]
-editor/display_folded = true
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 4, 35 )
-mesh = SubResource( 3 )
-material/0 = SubResource( 4 )
-
-[node name="StaticBody" type="StaticBody" parent="TestMap/Walls/MeshInstance"]
-
-[node name="CollisionShape" type="CollisionShape" parent="TestMap/Walls/MeshInstance/StaticBody"]
-shape = SubResource( 5 )
-
-[node name="MeshInstance7" type="MeshInstance" parent="TestMap/Walls"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 4, -7 )
-mesh = SubResource( 3 )
-material/0 = SubResource( 4 )
-
-[node name="StaticBody" type="StaticBody" parent="TestMap/Walls/MeshInstance7"]
-
-[node name="CollisionShape" type="CollisionShape" parent="TestMap/Walls/MeshInstance7/StaticBody"]
-shape = SubResource( 5 )
-
-[node name="MeshInstance8" type="MeshInstance" parent="TestMap/Walls"]
-editor/display_folded = true
-transform = Transform( -4.37114e-008, 0, -1, 0, 1, 0, 1, 0, -4.37114e-008, 3, 4, -22 )
-mesh = SubResource( 3 )
-material/0 = SubResource( 4 )
-
-[node name="StaticBody" type="StaticBody" parent="TestMap/Walls/MeshInstance8"]
-
-[node name="CollisionShape" type="CollisionShape" parent="TestMap/Walls/MeshInstance8/StaticBody"]
-shape = SubResource( 5 )
-
-[node name="MeshInstance9" type="MeshInstance" parent="TestMap/Walls"]
-editor/display_folded = true
-transform = Transform( -4.37114e-008, 0, -1, 0, 1, 0, 1, 0, -4.37114e-008, 35, 4, -22 )
-mesh = SubResource( 3 )
-material/0 = SubResource( 4 )
-
-[node name="StaticBody" type="StaticBody" parent="TestMap/Walls/MeshInstance9"]
-
-[node name="CollisionShape" type="CollisionShape" parent="TestMap/Walls/MeshInstance9/StaticBody"]
-shape = SubResource( 5 )
-
-[node name="MeshInstance10" type="MeshInstance" parent="TestMap/Walls"]
-editor/display_folded = true
-transform = Transform( -1, 0, 8.74228e-008, 0, 1, 0, -8.74228e-008, 0, -1, -7, 4, -37 )
-mesh = SubResource( 3 )
-material/0 = SubResource( 4 )
-
-[node name="StaticBody" type="StaticBody" parent="TestMap/Walls/MeshInstance10"]
-
-[node name="CollisionShape" type="CollisionShape" parent="TestMap/Walls/MeshInstance10/StaticBody"]
-shape = SubResource( 5 )
-
-[node name="MeshInstance3" type="MeshInstance" parent="TestMap/Walls"]
-editor/display_folded = true
-transform = Transform( -4.37114e-008, 0, 1, 0, 1, 0, -1, 0, -4.37114e-008, 35, 4, 20 )
-mesh = SubResource( 3 )
-material/0 = SubResource( 4 )
-
-[node name="StaticBody" type="StaticBody" parent="TestMap/Walls/MeshInstance3"]
-
-[node name="CollisionShape" type="CollisionShape" parent="TestMap/Walls/MeshInstance3/StaticBody"]
-shape = SubResource( 5 )
-
-[node name="MeshInstance6" type="MeshInstance" parent="TestMap/Walls"]
-editor/display_folded = true
-transform = Transform( -4.37114e-008, 0, 1, 0, 1, 0, -1, 0, -4.37114e-008, 3, 4, 20 )
-mesh = SubResource( 3 )
-material/0 = SubResource( 4 )
-
-[node name="StaticBody" type="StaticBody" parent="TestMap/Walls/MeshInstance6"]
-
-[node name="CollisionShape" type="CollisionShape" parent="TestMap/Walls/MeshInstance6/StaticBody"]
-shape = SubResource( 5 )
-
-[node name="MeshInstance11" type="MeshInstance" parent="TestMap/Walls"]
-editor/display_folded = true
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 4, 30 )
-mesh = SubResource( 3 )
-material/0 = SubResource( 4 )
-
-[node name="StaticBody" type="StaticBody" parent="TestMap/Walls/MeshInstance11"]
-
-[node name="CollisionShape" type="CollisionShape" parent="TestMap/Walls/MeshInstance11/StaticBody"]
-shape = SubResource( 5 )
-
-[node name="MeshInstance12" type="MeshInstance" parent="TestMap/Walls"]
-editor/display_folded = true
-transform = Transform( -4.37114e-008, 0, -1, 0, 1, 0, 1, 0, -4.37114e-008, -22, 4, 20 )
-mesh = SubResource( 3 )
-material/0 = SubResource( 4 )
-
-[node name="StaticBody" type="StaticBody" parent="TestMap/Walls/MeshInstance12"]
-
-[node name="CollisionShape" type="CollisionShape" parent="TestMap/Walls/MeshInstance12/StaticBody"]
-shape = SubResource( 5 )
-
-[node name="MeshInstance13" type="MeshInstance" parent="TestMap/Walls"]
-editor/display_folded = true
-transform = Transform( -4.37114e-008, 0, -1, 0, 1, 0, 1, 0, -4.37114e-008, -29, 4, 32 )
-mesh = SubResource( 3 )
-material/0 = SubResource( 4 )
-
-[node name="StaticBody" type="StaticBody" parent="TestMap/Walls/MeshInstance13"]
-
-[node name="CollisionShape" type="CollisionShape" parent="TestMap/Walls/MeshInstance13/StaticBody"]
-shape = SubResource( 5 )
-
-[node name="MeshInstance14" type="MeshInstance" parent="TestMap/Walls"]
-editor/display_folded = true
-transform = Transform( -1, 0, 8.74228e-008, 0, 1, 0, -8.74228e-008, 0, -1, -44, 4, 22 )
-mesh = SubResource( 3 )
-material/0 = SubResource( 4 )
-
-[node name="StaticBody" type="StaticBody" parent="TestMap/Walls/MeshInstance14"]
-
-[node name="CollisionShape" type="CollisionShape" parent="TestMap/Walls/MeshInstance14/StaticBody"]
-shape = SubResource( 5 )
-
-[node name="MeshInstance2" type="MeshInstance" parent="TestMap/Walls"]
-editor/display_folded = true
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 4, 35 )
-mesh = SubResource( 3 )
-material/0 = SubResource( 4 )
-
-[node name="StaticBody" type="StaticBody" parent="TestMap/Walls/MeshInstance2"]
-
-[node name="CollisionShape" type="CollisionShape" parent="TestMap/Walls/MeshInstance2/StaticBody"]
-shape = SubResource( 6 )
-
-[node name="MeshInstance4" type="MeshInstance" parent="TestMap/Walls"]
-editor/display_folded = true
-transform = Transform( -4.37114e-008, 0, 1, 0, 1, 0, -1, 0, -4.37114e-008, 35, 4, 8 )
-mesh = SubResource( 3 )
-material/0 = SubResource( 4 )
-
-[node name="StaticBody" type="StaticBody" parent="TestMap/Walls/MeshInstance4"]
-
-[node name="CollisionShape" type="CollisionShape" parent="TestMap/Walls/MeshInstance4/StaticBody"]
-shape = SubResource( 6 )
-
-[node name="MeshInstance5" type="MeshInstance" parent="TestMap/Walls"]
-editor/display_folded = true
-transform = Transform( -4.37114e-008, 0, 1, 0, 1, 0, -1, 0, -4.37114e-008, 3, 4, 9 )
-mesh = SubResource( 3 )
-material/0 = SubResource( 4 )
-
-[node name="StaticBody" type="StaticBody" parent="TestMap/Walls/MeshInstance5"]
-
-[node name="CollisionShape" type="CollisionShape" parent="TestMap/Walls/MeshInstance5/StaticBody"]
-shape = SubResource( 6 )
-
-[node name="Lights" type="Spatial" parent="TestMap"]
-
-[node name="SpotLight2" type="OmniLight" parent="TestMap"]
-transform = Transform( 1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 7.08518, 0 )
-omni_range = 50.0
-omni_attenuation = 3.4822
-
-[node name="ShotgunPickup" parent="TestMap" instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 38, 2, 0 )
-
-[node name="MeleeEnemy" parent="TestMap" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0 )
-
-[node name="MachineGunPickup" parent="TestMap" instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 2, 14 )
-
-[node name="SlidingDoor" parent="TestMap" instance=ExtResource( 4 )]
-transform = Transform( -4.37114e-008, 0, -1, 0, 1, 0, 1, 0, -4.37114e-008, 15, 4, 14.5 )
-
-[node name="HealthPickup" parent="TestMap" instance=ExtResource( 5 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 2, -2.5 )
-
-[node name="RangedEnemy" parent="TestMap" instance=ExtResource( 6 )]
-editor/display_folded = true
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.5, -41.5 )
-max_distance_to_player = 20.0
-
-[node name="RangedEnemy2" parent="TestMap" instance=ExtResource( 6 )]
-editor/display_folded = true
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 30.5, 3.5, -41.5 )
-max_distance_to_player = 20.0
-
-[node name="RangedShotgunEnemy" parent="TestMap" instance=ExtResource( 7 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -29.5, 3.5, 25.5 )
-
-[node name="RangedSlowEnemy" parent="TestMap" instance=ExtResource( 8 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -31.5, 3.5, 1.5 )
-
-[node name="Floor" type="Spatial" parent="TestMap"]
-editor/display_folded = true
-
-[node name="MeshInstance" type="MeshInstance" parent="TestMap/Floor"]
-transform = Transform( 1, 0, 0, 0, -4.37114e-008, 1, 0, -1, -4.37114e-008, 0, 1.20245, 13.2335 )
-mesh = SubResource( 8 )
-material/0 = SubResource( 9 )
-
-[node name="MeshInstance11" type="MeshInstance" parent="TestMap/Floor"]
-transform = Transform( 1, 0, 0, 0, -4.37114e-008, 1, 0, -1, -4.37114e-008, 12, 1.20245, 13.2335 )
-mesh = SubResource( 8 )
-material/0 = SubResource( 9 )
-
-[node name="MeshInstance3" type="MeshInstance" parent="TestMap/Floor"]
-transform = Transform( 1, 0, 0, 0, -4.37114e-008, 1, 0, -1, -4.37114e-008, -4, 1.20245, 13.2335 )
-mesh = SubResource( 8 )
-material/0 = SubResource( 9 )
-
-[node name="MeshInstance10" type="MeshInstance" parent="TestMap/Floor"]
-transform = Transform( 1, 0, 0, 0, -4.37114e-008, 1, 0, -1, -4.37114e-008, 8, 1.20245, 13.2335 )
-mesh = SubResource( 8 )
-material/0 = SubResource( 9 )
-
-[node name="MeshInstance6" type="MeshInstance" parent="TestMap/Floor"]
-transform = Transform( 1, 0, 0, 0, -4.37114e-008, 1, 0, -1, -4.37114e-008, -8, 1.20245, 13.2335 )
-mesh = SubResource( 8 )
-material/0 = SubResource( 9 )
-
-[node name="MeshInstance7" type="MeshInstance" parent="TestMap/Floor"]
-transform = Transform( 1, 0, 0, 0, -4.37114e-008, 1, 0, -1, -4.37114e-008, 4, 1.20245, 13.2335 )
-mesh = SubResource( 8 )
-material/0 = SubResource( 9 )
-
-[node name="MeshInstance2" type="MeshInstance" parent="TestMap/Floor"]
-transform = Transform( 1, 0, 0, 0, -4.37114e-008, 1, 0, -1, -4.37114e-008, 0, 1.20245, 17.2335 )
-mesh = SubResource( 8 )
-material/0 = SubResource( 9 )
-
-[node name="MeshInstance12" type="MeshInstance" parent="TestMap/Floor"]
-transform = Transform( 1, 0, 0, 0, -4.37114e-008, 1, 0, -1, -4.37114e-008, 12, 1.20245, 17.2335 )
-mesh = SubResource( 8 )
-material/0 = SubResource( 9 )
-
-[node name="MeshInstance4" type="MeshInstance" parent="TestMap/Floor"]
-transform = Transform( 1, 0, 0, 0, -4.37114e-008, 1, 0, -1, -4.37114e-008, -4, 1.20245, 17.2335 )
-mesh = SubResource( 8 )
-material/0 = SubResource( 9 )
-
-[node name="MeshInstance9" type="MeshInstance" parent="TestMap/Floor"]
-transform = Transform( 1, 0, 0, 0, -4.37114e-008, 1, 0, -1, -4.37114e-008, 8, 1.20245, 17.2335 )
-mesh = SubResource( 8 )
-material/0 = SubResource( 9 )
-
-[node name="MeshInstance5" type="MeshInstance" parent="TestMap/Floor"]
-transform = Transform( 1, 0, 0, 0, -4.37114e-008, 1, 0, -1, -4.37114e-008, -8, 1.20245, 17.2335 )
-mesh = SubResource( 8 )
-material/0 = SubResource( 9 )
-
-[node name="MeshInstance8" type="MeshInstance" parent="TestMap/Floor"]
-transform = Transform( 1, 0, 0, 0, -4.37114e-008, 1, 0, -1, -4.37114e-008, 4, 1.20245, 17.2335 )
-mesh = SubResource( 8 )
-material/0 = SubResource( 9 )
-
-[node name="Gem" parent="TestMap" instance=ExtResource( 10 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 3, 29 )
-
-[node name="Portal" parent="TestMap" instance=ExtResource( 11 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 4, -9 )
-
-[node name="Player" parent="." instance=ExtResource( 12 )]
-editor/display_folded = true
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 4.08518, 0 )
-move_speed = 25.0
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 3.08518, 44 )
 gravity = 5.0
 
-[node name="SpotLight" type="OmniLight" parent="Player"]
-transform = Transform( 1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 3, 0 )
-omni_range = 50.0
-omni_attenuation = 3.4822
+[node name="PlayerLight" parent="Player" instance=ExtResource( 2 )]
 
 [node name="GUI" type="CanvasLayer" parent="."]
 editor/display_folded = true
-script = ExtResource( 13 )
+script = ExtResource( 3 )
 
 [node name="HUD" type="Control" parent="GUI"]
 anchor_right = 1.0
@@ -378,7 +51,7 @@ margin_left = -3.5
 margin_top = -3.5
 margin_right = 3.5
 margin_bottom = 3.5
-texture = ExtResource( 14 )
+texture = ExtResource( 4 )
 expand = true
 
 [node name="Health" type="Label" parent="GUI/HUD"]
@@ -388,7 +61,7 @@ margin_left = 120.0
 margin_top = -30.0
 margin_right = 160.0
 margin_bottom = -7.0
-custom_fonts/font = SubResource( 7 )
+custom_fonts/font = SubResource( 1 )
 text = "150"
 align = 1
 valign = 1
@@ -402,7 +75,7 @@ margin_left = -163.0
 margin_top = -30.0
 margin_right = -123.0
 margin_bottom = -7.0
-custom_fonts/font = SubResource( 7 )
+custom_fonts/font = SubResource( 1 )
 text = "30"
 align = 1
 valign = 1
@@ -410,7 +83,7 @@ valign = 1
 [node name="Gems" type="Label" parent="GUI/HUD"]
 margin_right = 20.0
 margin_bottom = 23.0
-custom_fonts/font = SubResource( 7 )
+custom_fonts/font = SubResource( 1 )
 text = "0"
 align = 1
 valign = 1
@@ -424,7 +97,7 @@ margin_left = -130.0
 margin_top = -25.0
 margin_right = -105.0
 margin_bottom = -10.0
-texture = ExtResource( 16 )
+texture = ExtResource( 6 )
 expand = true
 stretch_mode = 6
 
@@ -432,7 +105,7 @@ stretch_mode = 6
 margin_left = 20.0
 margin_right = 40.0
 margin_bottom = 23.0
-texture = ExtResource( 17 )
+texture = ExtResource( 7 )
 expand = true
 stretch_mode = 4
 
@@ -441,7 +114,7 @@ margin_left = 110.0
 margin_top = 155.0
 margin_right = 120.0
 margin_bottom = 170.0
-texture = ExtResource( 18 )
+texture = ExtResource( 8 )
 expand = true
 stretch_mode = 6
 
@@ -449,7 +122,7 @@ stretch_mode = 6
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_fonts/font = ExtResource( 19 )
+custom_fonts/font = ExtResource( 9 )
 align = 1
 valign = 1
 autowrap = true
@@ -481,15 +154,396 @@ one_shot = true
 wait_time = 3.0
 one_shot = true
 
-[node name="AmmoPickup" parent="." instance=ExtResource( 20 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 2, -4.5 )
+[node name="World" parent="." instance=ExtResource( 10 )]
 
-[connection signal="area_entered" from="TestMap/RangedEnemy/DetectionArea" to="TestMap/RangedEnemy" method="_on_DetectionArea_area_entered"]
+[node name="Enemies" type="Spatial" parent="World"]
+
+[node name="RangedSlowEnemy" parent="World/Enemies" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 2.5, -13.5 )
+chance_to_miss = null
+
+[node name="RangedSlowEnemy2" parent="World/Enemies" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15.5, 2.5, -33.5 )
+chance_to_miss = null
+
+[node name="RangedSlowEnemy3" parent="World/Enemies" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -31.5, 2.5, 7 )
+chance_to_miss = null
+
+[node name="RangedSlowEnemy5" parent="World/Enemies" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -20.5, 2.5, -2 )
+chance_to_miss = null
+
+[node name="RangedSlowEnemy7" parent="World/Enemies" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -34.5, 2.5, 33.5 )
+chance_to_miss = null
+
+[node name="RangedSlowEnemy9" parent="World/Enemies" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 66, 2.5, -40 )
+chance_to_miss = null
+
+[node name="RangedSlowEnemy10" parent="World/Enemies" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -65.5, 2.5, -41.5 )
+chance_to_miss = null
+
+[node name="RangedSlowEnemy11" parent="World/Enemies" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -28, 2.5, -90 )
+chance_to_miss = null
+
+[node name="RangedSlowEnemy8" parent="World/Enemies" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -21, 2.5, 22 )
+chance_to_miss = null
+
+[node name="RangedSlowEnemy12" parent="World/Enemies" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -109, 2.5, -18.5 )
+chance_to_miss = null
+
+[node name="RangedSlowEnemy13" parent="World/Enemies" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -83, 2.5, -39 )
+chance_to_miss = null
+
+[node name="RangedSlowEnemy17" parent="World/Enemies" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -63, 2.5, 27 )
+chance_to_miss = null
+
+[node name="RangedSlowEnemy18" parent="World/Enemies" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -63, 2.5, 36 )
+chance_to_miss = null
+
+[node name="RangedSlowEnemy16" parent="World/Enemies" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -103.5, 2.5, 3 )
+chance_to_miss = null
+
+[node name="RangedSlowEnemy19" parent="World/Enemies" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -27.5, 2.5, -68.5 )
+chance_to_miss = null
+
+[node name="RangedSlowEnemy20" parent="World/Enemies" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -57.5, 2.5, -56 )
+chance_to_miss = null
+
+[node name="RangedSlowEnemy14" parent="World/Enemies" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -91, 2.5, 47.5 )
+chance_to_miss = null
+
+[node name="RangedSlowEnemy15" parent="World/Enemies" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -104.5, 2.5, 32.5 )
+chance_to_miss = null
+
+[node name="RangedEnemy" parent="World/Enemies" instance=ExtResource( 12 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 42, 2.5, 24.5 )
+
+[node name="RangedEnemy14" parent="World/Enemies" instance=ExtResource( 12 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -67.5, 2.5, -55.5 )
+
+[node name="RangedEnemy7" parent="World/Enemies" instance=ExtResource( 12 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 66, 2.5, -59.5 )
+
+[node name="RangedEnemy10" parent="World/Enemies" instance=ExtResource( 12 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -53, 2.5, -5.5 )
+
+[node name="RangedEnemy12" parent="World/Enemies" instance=ExtResource( 12 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 2.5, -64 )
+
+[node name="RangedEnemy13" parent="World/Enemies" instance=ExtResource( 12 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.5, 2.5, -51 )
+
+[node name="RangedEnemy8" parent="World/Enemies" instance=ExtResource( 12 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -28.5, 2.5, -60 )
+
+[node name="RangedEnemy11" parent="World/Enemies" instance=ExtResource( 12 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -53, 2.5, 29 )
+
+[node name="RangedEnemy2" parent="World/Enemies" instance=ExtResource( 12 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 23.5, 2.5, 10 )
+
+[node name="RangedEnemy3" parent="World/Enemies" instance=ExtResource( 12 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 28, 2.5, 35.5 )
+
+[node name="RangedEnemy4" parent="World/Enemies" instance=ExtResource( 12 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11.5, 2.5, -12 )
+
+[node name="RangedEnemy5" parent="World/Enemies" instance=ExtResource( 12 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 54.5, 2.5, -44 )
+
+[node name="RangedEnemy6" parent="World/Enemies" instance=ExtResource( 12 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 74, 2.5, -51.5 )
+
+[node name="RangedEnemy15" parent="World/Enemies" instance=ExtResource( 12 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 38.5, 2.5, -73 )
+
+[node name="RangedEnemy9" parent="World/Enemies" instance=ExtResource( 12 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -109.5, 2.5, -48 )
+
+[node name="RangedShotgunEnemy" parent="World/Enemies" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 35.5, 2.5, -13.5 )
+health = null
+move_speed = null
+chance_to_shoot = null
+chance_to_miss = null
+
+[node name="RangedShotgunEnemy12" parent="World/Enemies" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -62.5, 2.5, -8 )
+health = null
+move_speed = null
+chance_to_shoot = null
+chance_to_miss = null
+
+[node name="RangedShotgunEnemy6" parent="World/Enemies" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -38, 2.5, -69 )
+health = null
+move_speed = null
+chance_to_shoot = null
+chance_to_miss = null
+
+[node name="RangedShotgunEnemy14" parent="World/Enemies" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 2.5, -80 )
+health = null
+move_speed = null
+chance_to_shoot = null
+chance_to_miss = null
+
+[node name="RangedShotgunEnemy15" parent="World/Enemies" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 20.5, 2.5, -66.5 )
+health = null
+move_speed = null
+chance_to_shoot = null
+chance_to_miss = null
+
+[node name="RangedShotgunEnemy2" parent="World/Enemies" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 29.5, 2.5, -31.5 )
+health = null
+move_speed = null
+chance_to_shoot = null
+chance_to_miss = null
+
+[node name="RangedShotgunEnemy3" parent="World/Enemies" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -29, 2.5, -15 )
+health = null
+move_speed = null
+chance_to_shoot = null
+chance_to_miss = null
+
+[node name="RangedShotgunEnemy13" parent="World/Enemies" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -54, 2.5, -41 )
+health = null
+move_speed = null
+chance_to_shoot = null
+chance_to_miss = null
+
+[node name="RangedShotgunEnemy9" parent="World/Enemies" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -113.5, 2.5, 15.5 )
+health = null
+move_speed = null
+chance_to_shoot = null
+chance_to_miss = null
+
+[node name="RangedShotgunEnemy10" parent="World/Enemies" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -111.5, 2.5, 0 )
+health = null
+move_speed = null
+chance_to_shoot = null
+chance_to_miss = null
+
+[node name="RangedShotgunEnemy11" parent="World/Enemies" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -90.5, 2.5, 0 )
+health = null
+move_speed = null
+chance_to_shoot = null
+chance_to_miss = null
+
+[node name="RangedShotgunEnemy4" parent="World/Enemies" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 59, 2.5, -55.5 )
+health = null
+move_speed = null
+chance_to_shoot = null
+chance_to_miss = null
+
+[node name="RangedShotgunEnemy7" parent="World/Enemies" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -103, 2.5, -41.5 )
+health = null
+move_speed = null
+chance_to_shoot = null
+chance_to_miss = null
+
+[node name="RangedShotgunEnemy8" parent="World/Enemies" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -91.5, 2.5, -35.5 )
+health = null
+move_speed = null
+chance_to_shoot = null
+chance_to_miss = null
+
+[node name="Pickups" type="Spatial" parent="World"]
+editor/display_folded = true
+
+[node name="ShotgunPickup" parent="World/Pickups" instance=ExtResource( 14 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 2, -38 )
+
+[node name="MachineGunPickup" parent="World/Pickups" instance=ExtResource( 15 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 52, 2, -27 )
+
+[node name="AmmoPickup" parent="World/Pickups" instance=ExtResource( 16 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 28, 1, -87.5 )
+
+[node name="AmmoPickup2" parent="World/Pickups" instance=ExtResource( 16 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 33, 1, -87.5 )
+
+[node name="AmmoPickup5" parent="World/Pickups" instance=ExtResource( 16 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 49.5, 1, -27 )
+
+[node name="AmmoPickup6" parent="World/Pickups" instance=ExtResource( 16 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 58.5, 1, -38.5 )
+
+[node name="AmmoPickup7" parent="World/Pickups" instance=ExtResource( 16 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 72, 1, -59 )
+
+[node name="AmmoPickup8" parent="World/Pickups" instance=ExtResource( 16 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 20.5, 1, -57 )
+
+[node name="AmmoPickup3" parent="World/Pickups" instance=ExtResource( 16 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -111, 1, -68.5 )
+
+[node name="AmmoPickup4" parent="World/Pickups" instance=ExtResource( 16 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -106, 1, -63 )
+
+[node name="HealthPickup" parent="World/Pickups" instance=ExtResource( 17 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -111.5, 1, -63 )
+
+[node name="HealthPickup4" parent="World/Pickups" instance=ExtResource( 17 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 1, -87.5 )
+
+[node name="HealthPickup5" parent="World/Pickups" instance=ExtResource( 17 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 1, -87.5 )
+
+[node name="HealthPickup2" parent="World/Pickups" instance=ExtResource( 17 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -105.5, 1, -70 )
+
+[node name="HealthPickup3" parent="World/Pickups" instance=ExtResource( 17 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 2, -33.5 )
+
+[node name="Chips" type="Spatial" parent="World"]
+
+[node name="Gem" parent="World/Chips" instance=ExtResource( 18 )]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 53.5, 2, -39.5 )
+
+[node name="SpotLight2" type="SpotLight" parent="World/Chips/Gem"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-008, 1, 0, -1, -4.37114e-008, 0, 1.5, 0 )
+light_color = Color( 0.160784, 0.541176, 0.380392, 1 )
+light_energy = 9.18
+light_indirect_energy = 3.31
+spot_range = 4.5
+spot_attenuation = 0.15932
+spot_angle = 41.2
+spot_angle_attenuation = 0.554785
+
+[node name="Gem5" parent="World/Chips" instance=ExtResource( 18 )]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -58, 2, -8.5 )
+
+[node name="SpotLight3" type="SpotLight" parent="World/Chips/Gem5"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-008, 1, 0, -1, -4.37114e-008, 0, 1.5, 0 )
+light_color = Color( 0.160784, 0.541176, 0.380392, 1 )
+light_energy = 9.18
+light_indirect_energy = 3.31
+spot_range = 4.5
+spot_attenuation = 0.15932
+spot_angle = 41.2
+spot_angle_attenuation = 0.554785
+
+[node name="Gem2" parent="World/Chips" instance=ExtResource( 18 )]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -60.5, 2, 30.5 )
+
+[node name="SpotLight4" type="SpotLight" parent="World/Chips/Gem2"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-008, 1, 0, -1, -4.37114e-008, 0, 1.5, 0 )
+light_color = Color( 0.160784, 0.541176, 0.380392, 1 )
+light_energy = 9.18
+light_indirect_energy = 3.31
+spot_range = 4.5
+spot_attenuation = 0.15932
+spot_angle = 41.2
+spot_angle_attenuation = 0.554785
+
+[node name="Gem3" parent="World/Chips" instance=ExtResource( 18 )]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 2, -57 )
+
+[node name="SpotLight5" type="SpotLight" parent="World/Chips/Gem3"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-008, 1, 0, -1, -4.37114e-008, 0, 1.5, 0 )
+light_color = Color( 0.160784, 0.541176, 0.380392, 1 )
+light_energy = 9.18
+light_indirect_energy = 3.31
+spot_range = 4.5
+spot_attenuation = 0.15932
+spot_angle = 41.2
+spot_angle_attenuation = 0.554785
+
+[node name="Gem4" parent="World/Chips" instance=ExtResource( 18 )]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -117, 2, 50.5 )
+
+[node name="SpotLight6" type="SpotLight" parent="World/Chips/Gem4"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-008, 1, 0, -1, -4.37114e-008, 0, 1.5, 0 )
+light_color = Color( 0.160784, 0.541176, 0.380392, 1 )
+light_energy = 9.18
+light_indirect_energy = 3.31
+spot_range = 4.5
+spot_attenuation = 0.15932
+spot_angle = 41.2
+spot_angle_attenuation = 0.554785
+
+[node name="Doors" type="Spatial" parent="World"]
+
+[node name="SlidingDoor" parent="World/Doors" instance=ExtResource( 19 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 39, 3, -44 )
+
+[node name="SlidingDoor2" parent="World/Doors" instance=ExtResource( 19 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 21, 3, -2.5 )
+
+[node name="SlidingDoor3" parent="World/Doors" instance=ExtResource( 19 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -51.5, 3, 9 )
+
+[node name="SlidingDoor4" parent="World/Doors" instance=ExtResource( 19 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -51.5, 3, 45 )
+
+[node name="SlidingDoor5" parent="World/Doors" instance=ExtResource( 19 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -99.5, 3, -9 )
+
+[node name="SlidingDoor6" parent="World/Doors" instance=ExtResource( 19 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -57, 3, -26.5 )
+
+[node name="SlidingDoor7" parent="World/Doors" instance=ExtResource( 19 )]
+transform = Transform( -4.37114e-008, 0, -1, 0, 1, 0, 1, 0, -4.37114e-008, -45, 3, -57 )
+
+[node name="SlidingDoor8" parent="World/Doors" instance=ExtResource( 19 )]
+transform = Transform( -4.37114e-008, 0, -1, 0, 1, 0, 1, 0, -4.37114e-008, 14.5, 3, -93 )
+
+[node name="SlidingDoor9" parent="World/Doors" instance=ExtResource( 19 )]
+transform = Transform( -4.37114e-008, 0, -1, 0, 1, 0, 1, 0, -4.37114e-008, 3, 3, -27 )
+
+[node name="SlidingDoor10" parent="World/Doors" instance=ExtResource( 19 )]
+transform = Transform( -4.37114e-008, 0, -1, 0, 1, 0, 1, 0, -4.37114e-008, -45.5, 3, -20.5 )
+
+[node name="SlidingDoor11" parent="World/Doors" instance=ExtResource( 19 )]
+transform = Transform( -4.37114e-008, 0, -1, 0, 1, 0, 1, 0, -4.37114e-008, -45, 3, 15 )
+
+[node name="SlidingDoor12" parent="World/Doors" instance=ExtResource( 19 )]
+transform = Transform( -4.37114e-008, 0, -1, 0, 1, 0, 1, 0, -4.37114e-008, -69.5, 3, 15 )
+
+[node name="SlidingDoor13" parent="World/Doors" instance=ExtResource( 19 )]
+transform = Transform( -4.37114e-008, 0, -1, 0, 1, 0, 1, 0, -4.37114e-008, 14.5, 3, -75 )
+
+[node name="SlidingDoor14" parent="World/Doors" instance=ExtResource( 19 )]
+transform = Transform( -4.37114e-008, 0, -1, 0, 1, 0, 1, 0, -4.37114e-008, 15, 3, 45 )
+
+[node name="Lights" type="Spatial" parent="World"]
+
+[node name="VisibilityEnabler" type="VisibilityEnabler" parent="."]
+
 [connection signal="ammo_changed" from="Player" to="GUI" method="_on_Player_ammo_changed"]
 [connection signal="damaged" from="Player" to="GUI" method="_on_Player_damaged"]
 [connection signal="gems_changed" from="Player" to="GUI" method="_on_Player_gems_changed"]
 [connection signal="healed" from="Player" to="GUI" method="_on_Player_healed"]
 [connection signal="health_changed" from="Player" to="GUI" method="_on_Player_health_changed"]
 [connection signal="weapon_changed" from="Player" to="GUI" method="_on_Player_weapon_changed"]
-
-[editable path="TestMap/RangedEnemy"]

@@ -6,18 +6,18 @@
 [ext_resource path="res://actors/enemies/ranged-enemy/simple-ranged-walk-2.png" type="Texture" id=4]
 [ext_resource path="res://actors/enemies/ranged-enemy/simple-ranged-walk-3.png" type="Texture" id=5]
 [ext_resource path="res://actors/enemies/ranged-enemy/simple-ranged-walk-4.png" type="Texture" id=6]
-[ext_resource path="res://actors/enemies/ranged-enemy/simple-ranged-dead.png" type="Texture" id=7]
-[ext_resource path="res://actors/enemies/ranged-enemy/simple-ranged-attack-1.png" type="Texture" id=8]
-[ext_resource path="res://actors/enemies/ranged-enemy/simple-ranged-attack-2.png" type="Texture" id=9]
-[ext_resource path="res://actors/enemies/ranged-enemy/simple-ranged-attack-3.png" type="Texture" id=10]
-[ext_resource path="res://actors/enemies/ranged-enemy/simple-ranged-attack-4.png" type="Texture" id=11]
-[ext_resource path="res://actors/enemies/ranged-enemy/simple-ranged-attack-5.png" type="Texture" id=12]
-[ext_resource path="res://actors/enemies/ranged-enemy/simple-ranged-attack-6.png" type="Texture" id=13]
-[ext_resource path="res://actors/enemies/ranged-enemy/simple-ranged-attack-7.png" type="Texture" id=14]
-[ext_resource path="res://actors/enemies/ranged-enemy/simple-ranged-attack-8.png" type="Texture" id=15]
-[ext_resource path="res://actors/enemies/ranged-enemy/simple-ranged-attack-9.png" type="Texture" id=16]
+[ext_resource path="res://actors/enemies/ranged-enemy/simple-ranged-attack-1.png" type="Texture" id=7]
+[ext_resource path="res://actors/enemies/ranged-enemy/simple-ranged-attack-2.png" type="Texture" id=8]
+[ext_resource path="res://actors/enemies/ranged-enemy/simple-ranged-attack-3.png" type="Texture" id=9]
+[ext_resource path="res://actors/enemies/ranged-enemy/simple-ranged-attack-4.png" type="Texture" id=10]
+[ext_resource path="res://actors/enemies/ranged-enemy/simple-ranged-attack-5.png" type="Texture" id=11]
+[ext_resource path="res://actors/enemies/ranged-enemy/simple-ranged-attack-6.png" type="Texture" id=12]
+[ext_resource path="res://actors/enemies/ranged-enemy/simple-ranged-attack-7.png" type="Texture" id=13]
+[ext_resource path="res://actors/enemies/ranged-enemy/simple-ranged-attack-8.png" type="Texture" id=14]
+[ext_resource path="res://actors/enemies/ranged-enemy/simple-ranged-attack-9.png" type="Texture" id=15]
+[ext_resource path="res://actors/enemies/ranged-enemy/simple-ranged-dead.png" type="Texture" id=16]
 
-[sub_resource type="SpatialMaterial" id=3]
+[sub_resource type="SpatialMaterial" id=1]
 
 flags_albedo_tex_force_srgb = true
 params_billboard_mode = 2
@@ -25,7 +25,7 @@ params_use_alpha_scissor = true
 params_alpha_scissor_threshold = 1.0
 metallic_specular = 0.0
 
-[sub_resource type="SpriteFrames" id=1]
+[sub_resource type="SpriteFrames" id=2]
 
 animations = [ {
 "frames": [ ExtResource( 3 ) ],
@@ -38,37 +38,37 @@ animations = [ {
 "name": "walk",
 "speed": 7.0
 }, {
-"frames": [ ExtResource( 7 ) ],
-"loop": true,
-"name": "dead",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ) ],
+"frames": [ ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ) ],
 "loop": false,
 "name": "attack",
 "speed": 20.0
+}, {
+"frames": [ ExtResource( 16 ) ],
+"loop": true,
+"name": "dead",
+"speed": 5.0
 } ]
 
-[sub_resource type="CylinderShape" id=2]
+[sub_resource type="CylinderShape" id=3]
 
 radius = 30.0
 
 [node name="RangedEnemy" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
-health = 25
-move_speed = 10.0
-damage = 15
-max_distance_to_player = 15.0
-chance_to_shoot = 0.7
+health = 10
+move_speed = 5.0
+damage = 10
+max_distance_to_player = 20.0
+chance_to_shoot = 0.8
 chance_to_miss = 0.2
 
 [node name="AnimatedSprite3D" parent="." index="1"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.32955, 0 )
-material_override = SubResource( 3 )
-frames = SubResource( 1 )
+material_override = SubResource( 1 )
+frames = SubResource( 2 )
 
 [node name="CollisionShape" parent="DetectionArea" index="0"]
-shape = SubResource( 2 )
+shape = SubResource( 3 )
 
 [node name="RayCast" type="RayCast" parent="." index="4"]
 enabled = true

@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/shotgun-pickup.png-e626cc3bc21fcc56942115406153fe67.stex"
+path="res://.import/wall-texture.png-d476431a01829e5a88b8f7eacc3fca62.stex"
 
 [deps]
 
-source_file="res://weapons/pickups/shotgun/shotgun-pickup.png"
-dest_files=[ "res://.import/shotgun-pickup.png-e626cc3bc21fcc56942115406153fe67.stex" ]
+source_file="res://world/wall-texture.png"
+dest_files=[ "res://.import/wall-texture.png-d476431a01829e5a88b8f7eacc3fca62.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ flags/repeat=true
 flags/filter=false
 flags/mipmaps=true
 flags/anisotropic=false
-flags/srgb=2
+flags/srgb=1
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false

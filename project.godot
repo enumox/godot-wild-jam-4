@@ -136,6 +136,10 @@ select_shotgun={
  ]
 }
 
+[physics]
+
+3d/physics_engine="Bullet"
+
 [rendering]
 
 environment/default_clear_color=Color( 0.168627, 0.152941, 0.152941, 1 )

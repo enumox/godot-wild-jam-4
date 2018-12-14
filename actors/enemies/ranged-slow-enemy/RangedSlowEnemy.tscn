@@ -8,16 +8,16 @@
 [ext_resource path="res://actors/enemies/ranged-slow-enemy/slow-ranged-walk-3.png" type="Texture" id=6]
 [ext_resource path="res://actors/enemies/ranged-slow-enemy/slow-ranged-walk-4.png" type="Texture" id=7]
 [ext_resource path="res://actors/enemies/ranged-slow-enemy/slow-ranged-walk-5.png" type="Texture" id=8]
-[ext_resource path="res://actors/enemies/ranged-slow-enemy/slow-ranged-dead.png" type="Texture" id=9]
-[ext_resource path="res://actors/enemies/ranged-slow-enemy/slow-ranged-attack-1.png" type="Texture" id=10]
-[ext_resource path="res://actors/enemies/ranged-slow-enemy/slow-ranged-attack-2.png" type="Texture" id=11]
-[ext_resource path="res://actors/enemies/ranged-slow-enemy/slow-ranged-attack-3.png" type="Texture" id=12]
-[ext_resource path="res://actors/enemies/ranged-slow-enemy/slow-ranged-attack-4.png" type="Texture" id=13]
-[ext_resource path="res://actors/enemies/ranged-slow-enemy/slow-ranged-attack-5.png" type="Texture" id=14]
-[ext_resource path="res://actors/enemies/ranged-slow-enemy/slow-ranged-attack-6.png" type="Texture" id=15]
-[ext_resource path="res://actors/enemies/ranged-slow-enemy/slow-ranged-attack-7.png" type="Texture" id=16]
-[ext_resource path="res://actors/enemies/ranged-slow-enemy/slow-ranged-attack-8.png" type="Texture" id=17]
-[ext_resource path="res://actors/enemies/ranged-slow-enemy/slow-ranged-attack-9.png" type="Texture" id=18]
+[ext_resource path="res://actors/enemies/ranged-slow-enemy/slow-ranged-attack-1.png" type="Texture" id=9]
+[ext_resource path="res://actors/enemies/ranged-slow-enemy/slow-ranged-attack-2.png" type="Texture" id=10]
+[ext_resource path="res://actors/enemies/ranged-slow-enemy/slow-ranged-attack-3.png" type="Texture" id=11]
+[ext_resource path="res://actors/enemies/ranged-slow-enemy/slow-ranged-attack-4.png" type="Texture" id=12]
+[ext_resource path="res://actors/enemies/ranged-slow-enemy/slow-ranged-attack-5.png" type="Texture" id=13]
+[ext_resource path="res://actors/enemies/ranged-slow-enemy/slow-ranged-attack-6.png" type="Texture" id=14]
+[ext_resource path="res://actors/enemies/ranged-slow-enemy/slow-ranged-attack-7.png" type="Texture" id=15]
+[ext_resource path="res://actors/enemies/ranged-slow-enemy/slow-ranged-attack-8.png" type="Texture" id=16]
+[ext_resource path="res://actors/enemies/ranged-slow-enemy/slow-ranged-attack-9.png" type="Texture" id=17]
+[ext_resource path="res://actors/enemies/ranged-slow-enemy/slow-ranged-dead.png" type="Texture" id=18]
 
 [sub_resource type="SpriteFrames" id=1]
 
@@ -32,25 +32,25 @@ animations = [ {
 "name": "walk",
 "speed": 6.0
 }, {
-"frames": [ ExtResource( 9 ) ],
-"loop": true,
-"name": "dead",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ) ],
+"frames": [ ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ) ],
 "loop": false,
 "name": "attack",
 "speed": 20.0
+}, {
+"frames": [ ExtResource( 18 ) ],
+"loop": true,
+"name": "dead",
+"speed": 5.0
 } ]
 
-[node name="RangedSlowEnemy" instance=ExtResource( 1 )]
+[node name="RangedSlowEnemy" index="0" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
-health = 75
+health = 30
 move_speed = 5.0
-damage = 0
-attack_delay = 2.0
+damage = 30
+attack_delay = 1.0
 max_distance_to_player = 25.0
-chance_to_miss = 0.15
+chance_to_shoot = 0.8
 projectile = ExtResource( 3 )
 
 [node name="AnimatedSprite3D" parent="." index="1"]

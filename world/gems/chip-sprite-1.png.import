@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/shotgun-pickup.png-e626cc3bc21fcc56942115406153fe67.stex"
+path="res://.import/chip-sprite-1.png-b76165d1a745fc7d7b1ce1101641de14.stex"
 
 [deps]
 
-source_file="res://weapons/pickups/shotgun/shotgun-pickup.png"
-dest_files=[ "res://.import/shotgun-pickup.png-e626cc3bc21fcc56942115406153fe67.stex" ]
+source_file="res://world/gems/chip-sprite-1.png"
+dest_files=[ "res://.import/chip-sprite-1.png-b76165d1a745fc7d7b1ce1101641de14.stex" ]
 
 [params]
 
