@@ -1,16 +1,15 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://weapons/BaseWeapon.tscn" type="PackedScene" id=1]
 [ext_resource path="res://weapons/machine-gun/MachineGun.gd" type="Script" id=2]
 [ext_resource path="res://weapons/machine-gun/machinegun-icon.png" type="Texture" id=3]
 [ext_resource path="res://weapons/machine-gun/MachineGunMesh.tscn" type="PackedScene" id=4]
+[ext_resource path="res://sounds/machine-gun.wav" type="AudioStream" id=5]
 
 [sub_resource type="Animation" id=1]
 
 resource_name = "rotate"
 length = 0.3
-loop = false
-step = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("MeshInstance/MachineGunMesh/Torus:rotation_degrees")
 tracks/0/interp = 1
@@ -46,6 +45,9 @@ transform = Transform( -6.55671e-008, 0, 1.5, 0, 1.5, 5.55112e-016, -1.5, 0, -6.
 
 [node name="Torus" parent="MeshInstance/MachineGunMesh" index="1"]
 transform = Transform( 6.55671e-008, 1, 2.26494e-007, 1.5, -4.37114e-008, 0, 9.90035e-015, 1.50996e-007, -1.5, -0.0976634, -0.0210417, -2.4831e-009 )
+
+[node name="AudioStreamPlayer" parent="." index="3"]
+stream = ExtResource( 5 )
 
 
 [editable path="MeshInstance/MachineGunMesh"]

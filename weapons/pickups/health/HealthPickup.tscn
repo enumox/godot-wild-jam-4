@@ -1,12 +1,16 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://weapons/pickups/ammo/Pickup.tscn" type="PackedScene" id=1]
 [ext_resource path="res://weapons/pickups/health/HealthPickup.gd" type="Script" id=2]
 [ext_resource path="res://weapons/pickups/health/health-pickup.png" type="Texture" id=3]
+[ext_resource path="res://sounds/health-pick.wav" type="AudioStream" id=4]
 
 [node name="HealthPickup" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
 
 [node name="Sprite3D" parent="." index="0"]
 texture = ExtResource( 3 )
+
+[node name="AudioStreamPlayer" parent="." index="3"]
+stream = ExtResource( 4 )
 

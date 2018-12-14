@@ -6,4 +6,6 @@ func _on_body_entered(body) -> void:
 	if player == null:
 		return
 	player.weapon_manager.add_ammo()
+	$AudioStreamPlayer.play()
+	yield($AudioStreamPlayer, 'finished')
 	queue_free()

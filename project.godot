@@ -80,6 +80,7 @@ Debugger="*res://utils/Debugger.gd"
 
 window/size/width=320
 window/size/height=180
+window/size/fullscreen=true
 window/stretch/mode="viewport"
 window/stretch/aspect="keep"
 

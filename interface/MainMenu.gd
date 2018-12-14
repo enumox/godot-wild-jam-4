@@ -1,8 +1,11 @@
 extends Control
 
 export var arrow_offet : Vector2 = Vector2(-15, 8)
+export var select_audio : AudioStreamSample
+export var move_audio : AudioStreamSample
 
 onready var buttons_container : = $MarginContainer/Column/Buttons as VBoxContainer
+onready var audio_player : = $AudioStreamPlayer as AudioStreamPlayer
 onready var transition_overlay : = $TransitionOverlay as ColorRect
 onready var selection_arrow : = $SelectionArrow as Control
 onready var tween : = $Tween as Tween
@@ -24,6 +27,7 @@ func _unhandled_input(event) -> void:
 		_move_arrow()
 	elif event.is_action_pressed('ui_accept'):
 		var path = buttons[selected_index].path
+		play_audio(select_audio)
 		yield(_transition(), "completed")
 		if path == '':
 			get_tree().quit()
@@ -31,6 +35,7 @@ func _unhandled_input(event) -> void:
 			get_tree().change_scene(path)
 
 func _move_arrow() -> void:
+	play_audio(move_audio)
 	var move_to = _get_arrow_position(selected_index)
 	tween.interpolate_property(selection_arrow, 
 		"rect_global_position", 
@@ -53,6 +58,10 @@ func _transition() -> void:
 	)
 	tween.start()
 	yield(tween, 'tween_completed')
+
+func play_audio(audio : AudioStreamSample) -> void:
+	audio_player.stream = audio
+	audio_player.play()
 
 func _get_arrow_position(button_index : int = 0) -> Vector2:
 	return Vector2(buttons[button_index].get_global_rect().position.x + arrow_offet.x, buttons[button_index].get_global_rect().position.y + arrow_offet.y)

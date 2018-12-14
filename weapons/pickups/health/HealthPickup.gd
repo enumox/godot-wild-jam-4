@@ -8,4 +8,6 @@ func _on_body_entered(body) -> void:
 		return
 	var healed = player.heal(heal_amount)
 	if healed:
+		$AudioStreamPlayer.play()
+		yield($AudioStreamPlayer, 'finished')
 		queue_free()

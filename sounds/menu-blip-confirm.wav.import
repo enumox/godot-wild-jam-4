@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/menu-blip-confirm.wav-0a46e4fc414a867856d8d8cabd35bc1c.sample"
+
+[deps]
+
+source_file="res://sounds/menu-blip-confirm.wav"
+dest_files=[ "res://.import/menu-blip-confirm.wav-0a46e4fc414a867856d8d8cabd35bc1c.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

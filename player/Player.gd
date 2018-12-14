@@ -10,12 +10,14 @@ signal gems_changed(amount)
 
 onready var camera : = $Camera as PlayerCamera
 onready var weapon_manager : = $Camera/WeaponsManager as WeaponsManager
+onready var audio_player : = $AudioStreamPlayer as AudioStreamPlayer
 
 export var move_speed : float
 export var gravity : float
 export var acceleration : float
 export var deceleration : float
 export var max_health : int
+export var hit_sound : AudioStreamSample
 
 var health : int
 var gems : int = 0 setget set_gems
@@ -59,8 +61,13 @@ func take_damage(damage : float, knock_back_force : float = 0) -> void:
 	health = max(health - damage, 0)
 	emit_signal('damaged')
 	emit_signal('health_changed', health)
+	play_sound(hit_sound)
 	if health == 0:
 		get_tree().reload_current_scene()
+
+func play_sound(stream : AudioStreamSample) -> void:
+	audio_player.stream = stream
+	audio_player.play()
 
 func heal(amount : int) -> bool:
 	if health == max_health:

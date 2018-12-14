@@ -12,6 +12,7 @@ export var icon : Texture
 
 onready var timer : = $Timer as Timer
 onready var animation : = $AnimationPlayer as AnimationPlayer
+onready var audio_player : = $AudioStreamPlayer as AudioStreamPlayer
 
 var raycast : RayCast
 
@@ -41,6 +42,7 @@ func shoot() -> void:
 	animation.play('shoot')
 	ammo -= 1
 	emit_signal('ammo_changed', ammo)
+	audio_player.play()
 	if raycast.is_colliding():
 		var enemy = raycast.get_collider() as Enemy
 		if enemy != null:

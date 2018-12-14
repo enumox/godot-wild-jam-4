@@ -1,12 +1,14 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://interface/MainMenu.gd" type="Script" id=1]
-[ext_resource path="res://interface/menu-arrow.png" type="Texture" id=2]
-[ext_resource path="res://interface/fonts/uni0553_24.tres" type="DynamicFont" id=3]
-[ext_resource path="res://interface/fonts/uni0553_16.tres" type="DynamicFont" id=4]
-[ext_resource path="res://interface/ButtonLoadOption.gd" type="Script" id=5]
-[ext_resource path="res://interface/fonts/uni0553.ttf" type="DynamicFontData" id=6]
-[ext_resource path="res://sounds/menu-theme.ogg" type="AudioStream" id=7]
+[ext_resource path="res://sounds/menu-blip-confirm.wav" type="AudioStream" id=2]
+[ext_resource path="res://sounds/menu-blip-selection.wav" type="AudioStream" id=3]
+[ext_resource path="res://interface/menu-arrow.png" type="Texture" id=4]
+[ext_resource path="res://interface/fonts/uni0553_24.tres" type="DynamicFont" id=5]
+[ext_resource path="res://interface/fonts/uni0553_16.tres" type="DynamicFont" id=6]
+[ext_resource path="res://interface/ButtonLoadOption.gd" type="Script" id=7]
+[ext_resource path="res://interface/fonts/uni0553.ttf" type="DynamicFontData" id=8]
+[ext_resource path="res://sounds/menu-theme.ogg" type="AudioStream" id=9]
 
 [sub_resource type="Animation" id=1]
 
@@ -29,13 +31,15 @@ tracks/0/keys = {
 [sub_resource type="DynamicFont" id=2]
 
 size = 8
-font_data = ExtResource( 6 )
+font_data = ExtResource( 8 )
 
 [node name="MainMenu" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 1 )
 arrow_offet = Vector2( -15, 8 )
+select_audio = ExtResource( 2 )
+move_audio = ExtResource( 3 )
 
 [node name="SelectionArrow" type="Control" parent="."]
 editor/display_folded = true
@@ -51,7 +55,7 @@ __meta__ = {
 margin_left = -2.50139
 margin_right = 13.4986
 margin_bottom = 16.0
-texture = ExtResource( 2 )
+texture = ExtResource( 4 )
 stretch_mode = 6
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="SelectionArrow"]
@@ -75,7 +79,7 @@ margin_bottom = 175.0
 [node name="Title" type="Label" parent="MarginContainer/Column"]
 margin_right = 270.0
 margin_bottom = 34.0
-custom_fonts/font = ExtResource( 3 )
+custom_fonts/font = ExtResource( 5 )
 custom_colors/font_color_shadow = Color( 0.776471, 0.890196, 0.227451, 1 )
 custom_constants/shadow_offset_x = 0
 custom_constants/shadow_offset_y = 2
@@ -94,10 +98,10 @@ margin_left = 59.0
 margin_right = 211.0
 margin_bottom = 29.0
 size_flags_horizontal = 4
-custom_fonts/font = ExtResource( 4 )
+custom_fonts/font = ExtResource( 6 )
 text = "BRING THE PAIN"
 flat = true
-script = ExtResource( 5 )
+script = ExtResource( 7 )
 path = "res://Game.tscn"
 
 [node name="Quit" type="Button" parent="MarginContainer/Column/Buttons"]
@@ -106,10 +110,10 @@ margin_top = 44.0
 margin_right = 220.0
 margin_bottom = 73.0
 size_flags_horizontal = 4
-custom_fonts/font = ExtResource( 4 )
+custom_fonts/font = ExtResource( 6 )
 text = "I WANT MY MOMMY"
 flat = true
-script = ExtResource( 5 )
+script = ExtResource( 7 )
 
 [node name="Credits" type="Label" parent="MarginContainer/Column"]
 margin_top = 138.0
@@ -126,7 +130,10 @@ anchor_bottom = 1.0
 color = Color( 0.12549, 0.129412, 0.156863, 1 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 7 )
+volume_db = -15.0
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 9 )
 volume_db = -10.0
 autoplay = true
 

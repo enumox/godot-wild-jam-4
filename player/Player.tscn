@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://player/Player.gd" type="Script" id=1]
-[ext_resource path="res://player/Camera.gd" type="Script" id=2]
-[ext_resource path="res://weapons/WeaponsManager.gd" type="Script" id=3]
-[ext_resource path="res://weapons/pistol/Pistol.tscn" type="PackedScene" id=4]
-[ext_resource path="res://player/PlayerLight.tscn" type="PackedScene" id=5]
+[ext_resource path="res://sounds/hit-sound.wav" type="AudioStream" id=2]
+[ext_resource path="res://player/Camera.gd" type="Script" id=3]
+[ext_resource path="res://weapons/WeaponsManager.gd" type="Script" id=4]
+[ext_resource path="res://weapons/pistol/Pistol.tscn" type="PackedScene" id=5]
+[ext_resource path="res://player/PlayerLight.tscn" type="PackedScene" id=6]
 
 [sub_resource type="BoxShape" id=1]
 
@@ -21,6 +22,7 @@ gravity = 15.0
 acceleration = 5.0
 deceleration = 5.0
 max_health = 100
+hit_sound = ExtResource( 2 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, -4.37114e-008, 1, 0, -1, -4.37114e-008, 0, 0, 0 )
@@ -30,11 +32,11 @@ shape = SubResource( 1 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7036, 0 )
 environment = SubResource( 2 )
 current = true
-script = ExtResource( 2 )
+script = ExtResource( 3 )
 max_rotation = 80.0
 
 [node name="WeaponsManager" type="Spatial" parent="Camera"]
-script = ExtResource( 3 )
+script = ExtResource( 4 )
 
 [node name="Aim" type="RayCast" parent="Camera/WeaponsManager"]
 enabled = true
@@ -43,9 +45,12 @@ cast_to = Vector3( 0, 0, -50 )
 [node name="Hand" type="Spatial" parent="Camera/WeaponsManager"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.403497, -0.678123, 0.549766 )
 
-[node name="Pistol" parent="Camera/WeaponsManager/Hand" instance=ExtResource( 4 )]
+[node name="Pistol" parent="Camera/WeaponsManager/Hand" instance=ExtResource( 5 )]
 ammo = 50
 
-[node name="PlayerLight" parent="." instance=ExtResource( 5 )]
+[node name="PlayerLight" parent="." instance=ExtResource( 6 )]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+volume_db = -10.0
 
 [connection signal="weapon_changed" from="Camera/WeaponsManager" to="." method="_on_WeaponsManager_weapon_changed"]

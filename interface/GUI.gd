@@ -47,7 +47,10 @@ func _on_Player_gems_changed(amount):
 	var remainig = 5 - amount
 	if remainig == 0:
 		messages_label.text = 'All chips collected!\nGet them to the portal'
-	messages_label.text = str(remainig) + ' chips left'
+	elif remainig > 1:
+		messages_label.text = str(remainig) + ' chips left'
+	else:
+		messages_label.text = str(remainig) + ' chip left'
 	messages_label.show()
 	message_timer.start()
 	yield(message_timer, 'timeout')
