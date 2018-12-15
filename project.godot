@@ -24,6 +24,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://actors/enemies/ranged-slow-enemy/EnemyProjectile.gd"
 }, {
+"base": "Control",
+"class": "MainMenu",
+"language": "GDScript",
+"path": "res://interface/MainMenu.gd"
+}, {
 "base": "Area",
 "class": "Pickup",
 "language": "GDScript",
@@ -58,6 +63,7 @@ _global_script_class_icons={
 "AmmoPickup": "",
 "Enemy": "",
 "EnemyProjectile": "",
+"MainMenu": "",
 "Pickup": "",
 "Player": "",
 "PlayerCamera": "",
@@ -80,7 +86,6 @@ Debugger="*res://utils/Debugger.gd"
 
 window/size/width=320
 window/size/height=180
-window/size/fullscreen=true
 window/stretch/mode="viewport"
 window/stretch/aspect="keep"
 

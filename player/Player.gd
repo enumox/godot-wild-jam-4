@@ -24,6 +24,7 @@ var gems : int = 0 setget set_gems
 var movement : = Vector3()
 var direction : = Vector3()
 var yaw : float = 0
+var dead : bool = false
 
 
 func _ready() -> void:
@@ -57,13 +58,20 @@ func get_direction(motion : Vector3) -> Vector3:
 	return direction.normalized()
 
 func take_damage(damage : float, knock_back_force : float = 0) -> void:
-	print('damaged: ' + str(damage))
 	health = max(health - damage, 0)
 	emit_signal('damaged')
 	emit_signal('health_changed', health)
 	play_sound(hit_sound)
-	if health == 0:
-		get_tree().reload_current_scene()
+	if health == 0 and not dead:
+		dead = true
+		set_process(false)
+		set_physics_process(false)
+		set_process_input(false)
+		$Camera/WeaponsManager/Hand.queue_free()
+		$Camera.translation = Vector3()
+		$Camera.set_process(false)
+		yield(get_tree().create_timer(2.0), 'timeout')
+		get_tree().change_scene("res://interface/LoseMenu.tscn")
 
 func play_sound(stream : AudioStreamSample) -> void:
 	audio_player.stream = stream

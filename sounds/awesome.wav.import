@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/awesome.wav-7fa38eaa0ed3289daf3a77c62c80e5c3.sample"
+
+[deps]
+
+source_file="res://sounds/awesome.wav"
+dest_files=[ "res://.import/awesome.wav-7fa38eaa0ed3289daf3a77c62c80e5c3.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

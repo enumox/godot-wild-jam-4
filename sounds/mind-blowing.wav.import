@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/mind-blowing.wav-9b1dd341a145e6771a7d247378192408.sample"
+
+[deps]
+
+source_file="res://sounds/mind-blowing.wav"
+dest_files=[ "res://.import/mind-blowing.wav-9b1dd341a145e6771a7d247378192408.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

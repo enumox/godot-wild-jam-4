@@ -1,4 +1,5 @@
 extends Control
+class_name MainMenu
 
 export var arrow_offet : Vector2 = Vector2(-15, 8)
 export var select_audio : AudioStreamSample
@@ -6,6 +7,7 @@ export var move_audio : AudioStreamSample
 
 onready var buttons_container : = $MarginContainer/Column/Buttons as VBoxContainer
 onready var audio_player : = $AudioStreamPlayer as AudioStreamPlayer
+onready var music_player : = $MusicPlayer as AudioStreamPlayer
 onready var transition_overlay : = $TransitionOverlay as ColorRect
 onready var selection_arrow : = $SelectionArrow as Control
 onready var tween : = $Tween as Tween

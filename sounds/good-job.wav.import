@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/good-job.wav-0a47507c2fef88bdfe06898af34e237e.sample"
+
+[deps]
+
+source_file="res://sounds/good-job.wav"
+dest_files=[ "res://.import/good-job.wav-0a47507c2fef88bdfe06898af34e237e.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

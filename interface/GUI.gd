@@ -28,6 +28,8 @@ func _on_Player_health_changed(health) -> void:
 	if health_label == null:
 		yield(get_tree(), 'idle_frame')
 	health_label.text = str(int(health))
+	if health == 0:
+		damage_overlay.show()
 
 func _on_Player_ammo_changed(ammo) -> void:
 	if ammo_label == null:

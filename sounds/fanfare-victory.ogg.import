@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/fanfare-victory.ogg-00789bda6077e3bfe3b30e68d1d9dc92.oggstr"
+
+[deps]
+
+source_file="res://sounds/fanfare-victory.ogg"
+dest_files=[ "res://.import/fanfare-victory.ogg-00789bda6077e3bfe3b30e68d1d9dc92.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
