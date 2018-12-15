@@ -13,6 +13,13 @@ onready var gems_label : = $HUD/Gems as Label
 onready var messages_label : = $HUD/Messages as Label
 onready var weapon_icon : = $HUD/WeaponIcon as TextureRect
 
+func _ready() -> void:
+	messages_label.text = 'GET 5 CHIPS TO THE PORTAL'
+	messages_label.show()
+	message_timer.start()
+	yield(message_timer, 'timeout')
+	messages_label.hide()
+
 func _on_Player_damaged():
 	damage_overlay.show()
 	timer.start()

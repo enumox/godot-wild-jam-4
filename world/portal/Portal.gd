@@ -8,4 +8,4 @@ func _on_body_entered(body) -> void:
 	if player == null or player.gems < 5:
 		print("LOST")
 		return
-	print('WON')
+	get_tree().change_scene("res://interface/WinMenu.tscn")

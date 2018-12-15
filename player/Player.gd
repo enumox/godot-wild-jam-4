@@ -26,7 +26,6 @@ var direction : = Vector3()
 var yaw : float = 0
 var dead : bool = false
 
-
 func _ready() -> void:
 	health = max_health
 	emit_signal('health_changed', health)

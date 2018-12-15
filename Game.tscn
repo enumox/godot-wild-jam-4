@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://player/PlayerLight.tscn" type="PackedScene" id=2]
@@ -19,7 +19,8 @@
 [ext_resource path="res://weapons/pickups/health/HealthPickup.tscn" type="PackedScene" id=17]
 [ext_resource path="res://world/gems/Gem.tscn" type="PackedScene" id=18]
 [ext_resource path="res://world/doors/SlidingDoor.tscn" type="PackedScene" id=19]
-[ext_resource path="res://sounds/main-theme.ogg" type="AudioStream" id=20]
+[ext_resource path="res://world/portal/Portal.tscn" type="PackedScene" id=20]
+[ext_resource path="res://sounds/main-theme.ogg" type="AudioStream" id=21]
 
 [sub_resource type="DynamicFont" id=1]
 
@@ -30,12 +31,13 @@ font_data = ExtResource( 5 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 editor/display_folded = true
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 3.08518, 44 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 3.08518, 37 )
 gravity = 5.0
 
 [node name="PlayerLight" parent="Player" instance=ExtResource( 2 )]
 
 [node name="GUI" type="CanvasLayer" parent="."]
+editor/display_folded = true
 script = ExtResource( 3 )
 
 [node name="HUD" type="Control" parent="GUI"]
@@ -157,6 +159,7 @@ one_shot = true
 [node name="World" parent="." instance=ExtResource( 10 )]
 
 [node name="Enemies" type="Spatial" parent="World"]
+editor/display_folded = true
 
 [node name="RangedSlowEnemy2" parent="World/Enemies" instance=ExtResource( 11 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15.5, 2.5, -33.5 )
@@ -418,7 +421,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -105.5, 1, -70 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 2, -33.5 )
 
 [node name="Chips" type="Spatial" parent="World"]
-editor/display_folded = true
 
 [node name="Gem" parent="World/Chips" instance=ExtResource( 18 )]
 editor/display_folded = true
@@ -491,6 +493,7 @@ spot_angle = 41.2
 spot_angle_attenuation = 0.554785
 
 [node name="Doors" type="Spatial" parent="World"]
+editor/display_folded = true
 
 [node name="SlidingDoor" parent="World/Doors" instance=ExtResource( 19 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 39, 3, -44 )
@@ -536,10 +539,23 @@ transform = Transform( -4.37114e-008, 0, -1, 0, 1, 0, 1, 0, -4.37114e-008, 15, 3
 
 [node name="Lights" type="Spatial" parent="World"]
 
+[node name="Portal" parent="World" instance=ExtResource( 20 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 3, 44 )
+
+[node name="SpotLight3" type="SpotLight" parent="World/Portal"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-008, 1, 0, -1, -4.37114e-008, 0, 3.5, 0 )
+light_color = Color( 0.160784, 0.364706, 0.541176, 1 )
+light_energy = 9.18
+light_indirect_energy = 3.31
+spot_range = 10.3
+spot_attenuation = 0.15932
+spot_angle = 37.2
+spot_angle_attenuation = 0.554785
+
 [node name="VisibilityEnabler" type="VisibilityEnabler" parent="."]
 
 [node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 20 )
+stream = ExtResource( 21 )
 volume_db = -10.0
 autoplay = true
 
