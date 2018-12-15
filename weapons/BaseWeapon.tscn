@@ -113,8 +113,6 @@ size = Vector3( 0.2, 0.2, 2 )
 [node name="BaseWeapon" type="Spatial"]
 transform = Transform( 1, 0, 0, 0, 0.999968, 0.0079888, 0, -0.0079888, 0.999968, 0, 0, 0 )
 script = ExtResource( 1 )
-fire_rate = 5
-ammo = 50
 
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
@@ -131,4 +129,8 @@ material/0 = null
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 volume_db = -15.0
+
+[node name="MuzzleTimer" type="Timer" parent="."]
+wait_time = 0.1
+one_shot = true
 

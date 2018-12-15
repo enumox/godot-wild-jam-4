@@ -7,6 +7,7 @@ func shoot() -> void:
 	animation.play('shoot')
 	ammo -= 1
 	audio_player.play()
+	show_muzzle_flash()
 	emit_signal('ammo_changed', ammo)
 	if raycast.is_colliding():
 		var enemy = raycast.get_collider() as Enemy

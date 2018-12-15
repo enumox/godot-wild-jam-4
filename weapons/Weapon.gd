@@ -11,8 +11,10 @@ export var ammo_pickup_increase : = 5
 export var icon : Texture
 
 onready var timer : = $Timer as Timer
+onready var muzzle_timer : = $MuzzleTimer as Timer
 onready var animation : = $AnimationPlayer as AnimationPlayer
 onready var audio_player : = $AudioStreamPlayer as AudioStreamPlayer
+onready var muzzle_flash : = $MeshInstance/MuzzleFlash as SpotLight
 
 var raycast : RayCast
 
@@ -42,11 +44,18 @@ func shoot() -> void:
 	animation.play('shoot')
 	ammo -= 1
 	emit_signal('ammo_changed', ammo)
+	show_muzzle_flash()
 	audio_player.play()
 	if raycast.is_colliding():
 		var enemy = raycast.get_collider() as Enemy
 		if enemy != null:
 			enemy.take_damage(damage)
+	
+func show_muzzle_flash() -> void:
+	muzzle_flash.show()
+	muzzle_timer.start()
+	yield(muzzle_timer, 'timeout')
+	muzzle_flash.hide()
 
 func add_ammo() -> void:
 	ammo += ammo_pickup_increase

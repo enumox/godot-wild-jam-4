@@ -1,0 +1,12 @@
+[gd_scene format=2]
+
+[node name="MuzzleFlash" type="SpotLight"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.550812, 0.00440049 )
+light_color = Color( 0.819608, 0.423529, 0, 1 )
+light_energy = 12.91
+light_indirect_energy = 4.91
+spot_range = 10.0
+spot_attenuation = 0.517632
+spot_angle = 81.0
+spot_angle_attenuation = 0.594604
+
