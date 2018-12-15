@@ -57,6 +57,7 @@ func get_direction(motion : Vector3) -> Vector3:
 	return direction.normalized()
 
 func take_damage(damage : float, knock_back_force : float = 0) -> void:
+	camera.shake()
 	health = max(health - damage, 0)
 	emit_signal('damaged')
 	emit_signal('health_changed', health)
@@ -94,4 +95,5 @@ func _on_WeaponsManager_weapon_changed(weapon) -> void:
 	emit_signal('ammo_changed', weapon.ammo)
 
 func _on_weapon_ammo_changed(ammo) -> void:
+	camera.shake()
 	emit_signal('ammo_changed', ammo)

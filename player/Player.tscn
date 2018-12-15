@@ -33,7 +33,9 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7036, 0 )
 environment = SubResource( 2 )
 current = true
 script = ExtResource( 3 )
-max_rotation = 80.0
+amplitude = 0.2
+duration = 0.3
+DAMP_EASING = 0.482968
 
 [node name="WeaponsManager" type="Spatial" parent="Camera"]
 script = ExtResource( 4 )
@@ -47,6 +49,9 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.403497, -0.678123, 0.549766 
 
 [node name="Pistol" parent="Camera/WeaponsManager/Hand" instance=ExtResource( 5 )]
 ammo = 50
+
+[node name="Timer" type="Timer" parent="Camera"]
+one_shot = true
 
 [node name="PlayerLight" parent="." instance=ExtResource( 6 )]
 

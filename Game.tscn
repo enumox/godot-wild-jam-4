@@ -373,7 +373,6 @@ chance_to_shoot = null
 chance_to_miss = null
 
 [node name="Pickups" type="Spatial" parent="World"]
-editor/display_folded = true
 
 [node name="ShotgunPickup" parent="World/Pickups" instance=ExtResource( 14 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 2, -38 )
@@ -393,7 +392,19 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 49.5, 1, -27 )
 [node name="AmmoPickup6" parent="World/Pickups" instance=ExtResource( 16 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 58.5, 1, -38.5 )
 
+[node name="AmmoPickup10" parent="World/Pickups" instance=ExtResource( 16 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -61, 1, -46.5 )
+
+[node name="AmmoPickup11" parent="World/Pickups" instance=ExtResource( 16 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -68, 1, -34.5 )
+
+[node name="AmmoPickup12" parent="World/Pickups" instance=ExtResource( 16 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -52, 1, -34.5 )
+
 [node name="AmmoPickup7" parent="World/Pickups" instance=ExtResource( 16 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 72, 1, -59 )
+
+[node name="AmmoPickup9" parent="World/Pickups" instance=ExtResource( 16 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 72, 1, -59 )
 
 [node name="AmmoPickup8" parent="World/Pickups" instance=ExtResource( 16 )]
@@ -407,6 +418,12 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -106, 1, -63 )
 
 [node name="HealthPickup" parent="World/Pickups" instance=ExtResource( 17 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -111.5, 1, -63 )
+
+[node name="HealthPickup6" parent="World/Pickups" instance=ExtResource( 17 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -68.5, 1, -46.5 )
+
+[node name="HealthPickup7" parent="World/Pickups" instance=ExtResource( 17 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -62.5, 1, -51.5 )
 
 [node name="HealthPickup4" parent="World/Pickups" instance=ExtResource( 17 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 1, -87.5 )
