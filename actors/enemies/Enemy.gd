@@ -19,6 +19,7 @@ func _ready() -> void:
 	set_physics_process(false)
 
 func take_damage(value : int) -> void:
+	OS.delay_msec(25)
 	health = max(health - value, 0)
 	if health == 0:
 		animation.play('dead')
